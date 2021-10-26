@@ -1,6 +1,7 @@
 <?php
 
-    // windows AWS server pass - oJEG&MipW(IZCzyI@Zi7B?AFj;F2HUQH
+    // windows AWS server pass - oJEG&MipW(IZCzyI@Zi7B?AFj;F2HUQH 
+    // windows AWS server 2 pass - 4O)Llp!Xzgww2haFWKd7aO-L5CCBf;vN
 
 
     // http://localhost/cloud/

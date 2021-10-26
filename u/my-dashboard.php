@@ -2,7 +2,7 @@
     session_start();
     error_reporting(0);
     if($_SESSION['email'] == '') {
-        header('Location: http://myapp.local/cloud/');
+        header('Location: /');
     }   
     require '../vendor/autoload.php';
     require '../database/_db_connect.php';  
@@ -38,7 +38,7 @@
 
     <title>Gallery | <?php echo $row['1'] ?></title>
     <?php include '../asset/header.php'; ?>
-    <link rel="stylesheet" href="http://myapp.local/cloud/public/css/my-dashboard.css?ver=1.2">
+    <link rel="stylesheet" href="../public/css/my-dashboard.css?ver=1.2">
 </head>
 
 <body>
@@ -110,7 +110,7 @@
 
 
 <?php include '../asset/footer.php'; ?>
-<script src="../js/my-dashboard.js?ver=1.1"></script>
+<script src="../controller/js/my-dashboard.js?ver=1.1"></script>
 
 </body>
 

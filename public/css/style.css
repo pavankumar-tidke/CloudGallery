@@ -201,7 +201,7 @@ label {
 
 /* page loading  */
 .loading {
-  color: #b923ff !important;
+  color: #05cafc !important;
   height: 100%;
   width: 100%;
   position: fixed;
@@ -215,7 +215,7 @@ label {
 }
 /* page loading  */
 .signout-loading {
-  color: #d270ff !important;
+  color:  red !important;
   height: 100%;
   width: 100%;
   position: fixed;
@@ -230,7 +230,7 @@ label {
 
 /* div loading  */
 .divload {
-  color: #a83eff !important;
+  color: #05cafc !important;
   /* height: 90%;
     width: 90% !important; */
   top: 40%;
@@ -256,7 +256,7 @@ label {
   right: 40px;
   width: 60px;
   height: 60px;
-  background: #fff url("http://myapp.local/cloud/public/image/top.png");
+  background: #fff url("http://localhost/CloudGallery/public/image/top.png");
   border-radius: 50%;
   background-size: 40px;
   background-position: center;
@@ -282,7 +282,7 @@ label {
 }
 .abcRioButtonContentWrapper {
   color: var(--text-color-white-darkTheam) !important;
-  background-color: rgb(57, 0, 136) !important;
+  background-color: #05cafc !important;
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;

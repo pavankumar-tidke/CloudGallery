@@ -22,7 +22,7 @@ function add_to_Favourite(i, display_category, media_id, media_name, folder_id=n
     
     // sending request to server for ADD the item to favourite list
     let add_to_Favourite = true;
-    var url = `../php/live_operation`;
+    var url = `http://localhost/CloudGallery/controller/php/live_operation`;
     $.ajax({
         url: url,
         type: 'POST',
@@ -56,7 +56,7 @@ function remove_from_Favourite(i, display_category, media_id, media_name) {
     
     // sending request to server for REMOVE the item from favourite list
     let remove_from_Favourite = true;
-    var url = `../php/live_operation`;
+    var url = `http://localhost/CloudGallery/controller/php/live_operation`;
     $.ajax({
         url: url,
         type: 'POST',
@@ -77,7 +77,7 @@ function remove_from_Favourite(i, display_category, media_id, media_name) {
 function from_favourite_page_remove_Favourite(i, display_category, category_id, media_id, media_name) {
     // sending request to server for REMOVE the item from favourite list
     let from_favourite_page_remove_Favourite = true;
-    var url = `../php/live_operation`;
+    var url = `http://localhost/CloudGallery/controller/php/live_operation`;
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -129,7 +129,7 @@ $(document).on('click', '#rename-item-btn', (e) => {
 
         // sending request to server for RENAMING
         let rename_item = true;
-        var url = `../php/live_operation`;
+        var url = `http://localhost/CloudGallery/controller/php/live_operation`;
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -155,7 +155,7 @@ function share_item(i, display_category, media_id, media_name) {
 
     // sending request to server for creating share link
     let share_item = true;
-    var url = `../php/share_handler`;
+    var url = `http://localhost/CloudGallery/controller/php/share_handler`;
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -195,7 +195,7 @@ $(document).on('click', '#move-item-btn', (e) => {
 
         // sending request to server for RENAMING
         let rename_item = true;
-        var url = `../php/live_operation`;
+        var url = `http://localhost/CloudGallery/controller/php/live_operation`;
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -222,7 +222,7 @@ $(document).on('click', '#move-item-btn', (e) => {
 //***** delete item *****//
 function remove_item(i, display_category, media_id, media_name) {
     let remove_item = true;
-    var url = `../php/live_operation`;
+    var url = `http://localhost/CloudGallery/controller/php/live_operation`;
     $.ajax({
         url: url,
         type: 'POST',

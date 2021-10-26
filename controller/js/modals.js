@@ -12,7 +12,7 @@ $(document).on('click', '#new-album-create-btn', function(e) {
         $(this).attr('disabled', true);
         let newAlbum = true;
         var xhr = new XMLHttpRequest();
-        var url = `../php/insert_data.php`;
+        var url = `http://localhost/CloudGallery/controller/php/insert_data.php`;
 
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -58,7 +58,7 @@ $(document).on('click', '#new-folder-create-btn', function(e) {
         $(this).attr('disabled', true);
         let newFolder = true;
         var xhr = new XMLHttpRequest();
-        var url = `../php/insert_data.php`;
+        var url = `http://localhost/CloudGallery/controller/php/insert_data.php`;
   
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

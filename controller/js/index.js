@@ -110,7 +110,7 @@ $(document).on('click', '#login-btn', function(e) {
             if(xhr.responseText == 'true') {
                 // $('#login_warn').html(`<h6 class="text-center text-primary">${xhr.responseText}</h6>`)
                 setTimeout(function() {
-                    window.location.href = `http://localhost/CloudGallery/my-gallery`;
+                    window.location.href = `http://ec2-18-220-10-227.us-east-2.compute.amazonaws.com/CloudGallery/my-gallery`;
                 }, 2000);
             }
             else if(xhr.responseText == 'passErr') {
@@ -164,7 +164,7 @@ $(document).on('click', '#signup-btn', function(e) {
             if(xhr.responseText == 'true') {
                 $('#signup_warn').html(`<h6 class="text-center text-success">Account Created Successfully, <span class="text-warning">Redirecting...</span></h6>`)
                 setTimeout(() => {
-                    window.location.href = `http://localhost/CloudGallery/my-gallery`;                    
+                    window.location.href = `http://ec2-18-220-10-227.us-east-2.compute.amazonaws.com/CloudGallery/my-gallery`;                    
                 }, 2000);
             }
             else if(xhr.responseText == 'emailNotSendErr') {

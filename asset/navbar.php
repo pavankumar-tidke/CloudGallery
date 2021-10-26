@@ -4,7 +4,7 @@
 <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container-fluid d-flex justify-content-between">
         <div class="d-flex flex-column nb">
-            <a class="navbar-brand mx-auto py-0 text" href="http://localhost/CloudGallery">S G</a>
+            <a class="navbar-brand mx-auto py-0 text" href="http://18.117.246.170/CloudGallery">S G</a>
             <p class="m-0 p-0 text">Smart Gallery</p>
         </div>
         <div class="right-item d-flex justify-content-between">
@@ -55,7 +55,7 @@
                 <a href="#" class="d-flex align-items-center link-dark text-decoration-none " id="dropdownUser2"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <!-- <img src="<?php echo $_SESSION['profileImg']?>" width="32" height="32" class="rounded-circle me-2" alt=""> -->
-                    <img src="http://localhost/CloudGallery/public/image/default_user.png" alt="" width="32"
+                    <img src="http://18.117.246.170/CloudGallery/public/image/default_user.png" alt="" width="32"
                         height="32" class="rounded-circle me-2">
                     <strong class="text"></strong>
                 </a>

@@ -1,5 +1,5 @@
 <?php
 
     if($_SESSION['email'] == '') {
-        header('Location: http://localhost/CloudGallery/signup');
+        header('Location: http://18.117.246.170/CloudGallery/signup');
     }

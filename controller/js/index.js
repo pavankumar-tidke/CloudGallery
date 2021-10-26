@@ -109,9 +109,9 @@ $(document).on('click', '#login-btn', function(e) {
           if (this.readyState == 4 && this.status == 200) {
             if(xhr.responseText == 'true') {
                 // $('#login_warn').html(`<h6 class="text-center text-primary">${xhr.responseText}</h6>`)
-                setTimeout(function() {
+                // setTimeout(function() {
                     window.location.href = `http://18.117.246.170/CloudGallery/my-gallery`;
-                }, 2000);
+                // }, 2000);
             }
             else if(xhr.responseText == 'passErr') {
                 $('#login_warn').html('<h6 class="text-center text-danger">Wrong credentials !</h6>')
@@ -163,9 +163,9 @@ $(document).on('click', '#signup-btn', function(e) {
           if (this.readyState == 4 && this.status == 200) {
             if(xhr.responseText == 'true') {
                 $('#signup_warn').html(`<h6 class="text-center text-success">Account Created Successfully, <span class="text-warning">Redirecting...</span></h6>`)
-                setTimeout(() => {
+                // setTimeout(() => {
                     window.location.href = `http://18.117.246.170/CloudGallery/my-gallery`;                    
-                }, 2000);
+                // }, 2000);
             }
             else if(xhr.responseText == 'emailNotSendErr') {
                 $('#signup_warn').html('<h6 class="text-center text-success">Account is created <span class="text-danger">but, Email not sent !</span></h6>')

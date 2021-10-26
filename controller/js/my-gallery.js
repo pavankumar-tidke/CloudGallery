@@ -781,10 +781,10 @@ $(document).on("click", ".signout", function () {
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      setTimeout(() => {
+      // setTimeout(() => {
         $(".signout-loading").show();
         window.location.href = `http://18.117.246.170/CloudGallery/`;
-      }, 1000);
+      // }, 1000);
     }
   };
   xhr.send(`logout=${logout}`);

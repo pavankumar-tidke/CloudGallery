@@ -16,7 +16,7 @@
     <?php include './asset/header.php'; ?>
     <?php include './alerts.php'; ?>
     <?php include './_logout.php'; ?>
-    <link rel="stylesheet" href="https://sm2.epizy.com/public/css/index.css?ver=1.4">
+    <link rel="stylesheet" href="http://localhost/CloudGallery/public/css/index.css?ver=1.4">
 </head>
 
 <body>
@@ -48,7 +48,7 @@
                     }
                     else {
                         echo '<div class="d-flex justify-content-center">
-                                <a href="https://sm2.epizy.com/signup" class="btn default-btn bold theam-btn-hover text-light py-3 px-5">Let\'s create account <i class="bi bi-arrow-right-short mx-1"></i></a>
+                                <a href="http://localhost/CloudGallery/signup" class="btn default-btn bold theam-btn-hover text-light py-3 px-5">Let\'s create account <i class="bi bi-arrow-right-short mx-1"></i></a>
                             </div>';
                     }
                 ?>
@@ -140,7 +140,7 @@
 
 
     <?php include './asset/footer.php'; ?>
-    <script src="https://sm2.epizy.com/controller/js/index.js?ver=1.8"></script>
+    <script src="http://localhost/CloudGallery/controller/js/index.js?ver=1.8"></script>
 </body>
 
 </html>

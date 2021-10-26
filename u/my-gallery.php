@@ -37,9 +37,9 @@
 
     
     <?php include '../asset/header.php'; ?>
-    <link rel="stylesheet" href="https://sm2.epizy.com/public/css/my-gallery.css?ver=4.8">
-    <link rel="stylesheet" href="https://sm2.epizy.com/public/css/modals.css?ver=1.9">
-    <link rel="stylesheet" href="https://sm2.epizy.com/asset/library/lit/jquery.treemenu.css">
+    <link rel="stylesheet" href="http://localhost/CloudGallery/public/css/my-gallery.css?ver=4.8">
+    <link rel="stylesheet" href="http://localhost/CloudGallery/public/css/modals.css?ver=1.9">
+    <link rel="stylesheet" href="http://localhost/CloudGallery/asset/library/lit/jquery.treemenu.css">
 
 </head>
 
@@ -217,13 +217,13 @@
 
 
 
-    <script src="https://sm2.epizy.com/controller/js/modals.js?ver=2.1"></script>
+    <script src="http://localhost/CloudGallery/controller/js/modals.js?ver=2.1"></script>
 
-    <script src="https://sm2.epizy.com/asset/library/lit/jquery.treemenu.js"></script>
+    <script src="http://localhost/CloudGallery/asset/library/lit/jquery.treemenu.js"></script>
 
-    <script src="https://sm2.epizy.com/controller/js/dynamic_url.js?ver=1.5"></script>
+    <script src="http://localhost/CloudGallery/controller/js/dynamic_url.js?ver=1.5"></script>
     
-    <script src="https://sm2.epizy.com/controller/js/my-gallery.js?ver=8.8"></script>
+    <script src="http://localhost/CloudGallery/controller/js/my-gallery.js?ver=8.8"></script>
     <script>
         
     </script>

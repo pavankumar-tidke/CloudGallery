@@ -4,7 +4,7 @@
 <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container-fluid d-flex justify-content-between">
         <div class="d-flex flex-column nb">
-            <a class="navbar-brand mx-auto py-0 text" href="https://sm2.epizy.com">S G</a>
+            <a class="navbar-brand mx-auto py-0 text" href="http://localhost/CloudGallery">S G</a>
             <p class="m-0 p-0 text">Smart Gallery</p>
         </div>
         <div class="right-item d-flex justify-content-between">
@@ -55,7 +55,7 @@
                 <a href="#" class="d-flex align-items-center link-dark text-decoration-none " id="dropdownUser2"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <!-- <img src="<?php echo $_SESSION['profileImg']?>" width="32" height="32" class="rounded-circle me-2" alt=""> -->
-                    <img src="https://sm2.epizy.com/public/image/default_user.png" alt="" width="32"
+                    <img src="http://localhost/CloudGallery/public/image/default_user.png" alt="" width="32"
                         height="32" class="rounded-circle me-2">
                     <strong class="text"></strong>
                 </a>
@@ -114,7 +114,7 @@
         echo '<nav class="navbar navbar-expand-lg sticky-top">
                 <div class="container-fluid">
                 <div class="d-flex flex-column nb">
-                    <a class="navbar-brand mx-auto py-0 text" href="https://sm2.epizy.com">S G</a>
+                    <a class="navbar-brand mx-auto py-0 text" href="http://localhost/CloudGallery">S G</a>
                     <p class="m-0 p-0 text">Smart Gallery</p>
                 </div>
                 <button class="navbar-toggler btn-sm border border-light text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -126,7 +126,7 @@
                     </ul>
                     <div class="d-flex justify-content-center mx-5">
                         
-                        <a class="text-light mx-5" href="https://sm2.epizy.com/signup" role="button" style="text-decoration: none; font-weight: 600;">Sign In</a>
+                        <a class="text-light mx-5" href="http://localhost/CloudGallery/signup" role="button" style="text-decoration: none; font-weight: 600;">Sign In</a>
                     </div>
                 </div>
                 </div>

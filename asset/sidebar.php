@@ -1,5 +1,5 @@
 <div class="Sidebar d-flex flex-column flex-shrink-0 p-2" id="sidebar">
-    <a href="https://sm2.epizy.com" class="text-decoration-none">
+    <a href="http://localhost/CloudGallery" class="text-decoration-none">
         <div class="d-flex flex-column sb">
             <a class="mx-auto py-0 text side-brand">S G</a>
             <!-- <p class="my-0 mx-auto p-0 text">Smart Gallery</p> -->

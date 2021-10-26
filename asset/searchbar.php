@@ -13,7 +13,7 @@
             <div class="dropup sidebar-dropdown user-dropdown  my-auto align-middle">
                 <a href="#" class="d-flex align-items-center link-dark text-decoration-none  my-auto" id="dropdownUser2"
                     data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://sm2.epizy.com/public/image/default_user.png" alt=""
+                    <img src="http://localhost/CloudGallery/public/image/default_user.png" alt=""
                                 width="32" height="32" class="rounded-circle me-2 align-middle">
                     <!-- <img src="" width="32" height="32" class="rounded-circle me-2" alt=""> -->
                     <!-- <strong class="text"> <i class="bi bi-caret-up-fill ms-3"></i></strong> -->

@@ -1,0 +1,41 @@
+
+
+:root {
+    /* light theam */
+    --body-bg-lightTheam: #fff !important;
+    --body-bg-light-lightTheam: #ebebeb !important;
+    --default-btn-bg-light-theam: #390088 !important;
+    --text-color-light-theam: #000 !important;
+    --heading-color-light-theam: #a83eff !important;
+    
+    
+    /* dark theam */
+    --body-bg-darkTheam: #1b1b1b !important;
+    --body-bg-dark-darkTheam: #000 !important;
+    --default-btn-bg-dark-theam: #390088 !important;
+    --text-color-white-darkTheam: #fff !important;
+    --heading-color-dark-theam: #a83eff !important;
+  
+  
+    /* red theam */
+  
+}
+
+
+
+body {
+    background-color: var(--body-bg-darkTheam);
+}
+
+
+/* second container */
+
+.second-container .pl1, .pl2, .pl3, .pl4 {
+    height: 320px !important;
+    width: 320px !important;
+}
+
+.contact input, 
+.contact textarea {
+    background: var(--body-bg-darkTheam) !important; 
+}

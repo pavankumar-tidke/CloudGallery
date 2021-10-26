@@ -1,0 +1,250 @@
+
+
+.signup .containerMain {
+    padding: 5% 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.user h4 {
+    text-align: center;
+    font-size: 1.9rem;
+    font-family: 'Galada', cursive;
+}
+
+.card {
+    width: 12rem;
+    height: 12rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+@media (max-width:800px) {
+    #i_h1 {
+        /* background-color: red; */
+        font-size: 2.1rem;
+    }
+    
+    .btn1 {
+        /* background: rgb(63,94,251); */
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,6,94,1) 0%, rgba(9,9,121,1) 19%, rgba(0,212,255,1) 100%);        color: white;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 0.9;
+    }
+
+    .second-page h1 {
+        font-size: 1.5rem;
+    }
+    .second-page .topic {
+        text-align: center;
+        font-weight: 400;
+        font-size: 1rem;
+    }
+    .second-page h4 {
+        text-align: center;
+        font-size: 0.8rem;
+    }
+    .second-page .dis1 {
+        margin-top: 10%;
+        visibility: visible;
+    }
+    .second-page .dis2 {
+        visibility: hidden;
+    }
+    .second-page lottie-player {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 300px;
+        width: 300px;
+    }
+
+    .review .row {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .review h1 {
+        font-size: 1.5rem;
+        margin-top: 0%;
+    }
+
+    .team h1 {
+        font-size: 1.5rem;
+        margin-top: 0%;
+    }
+
+    .contact h1 {
+        font-size: 1.5rem;
+        margin-top: 0%;
+    }
+    .contact label {
+        font-size: 1rem;
+    }
+
+
+    .signup h2 {
+        /* margin-top: 0; */
+        font-size: 1.8rem;
+    }
+    .signup label {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    .signup .containerMain {
+        padding: 4% 4%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+    .signup .containerMain {
+        box-shadow: 5px 5px 10px #000;
+    }
+
+
+    .user h4 {
+        text-align: center;
+        font-size: 1.9rem;
+        font-family: 'Galada', cursive;
+    }
+
+    .card {
+        width: 10rem;
+        height: 11rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.616); 
+    }
+    /* .card img {
+        width: rem;
+        height: 5rem;
+    } */
+    
+    .ch {
+        /* display: flex; */
+        /* flex-direction: row; */
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+   
+    
+    .btn-gal {
+        background-color: transparent;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 6px;
+        margin-bottom: 10px;
+        color: rgb(155, 4, 214);
+    }
+    .btm-gal {
+        background-color: transparent;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        color: rgb(155, 4, 214);
+    }
+    
+    /* photo viewer */
+    .h h1 {
+        margin-top: 9%;
+        font-weight: 500;
+        font-size: 2rem;
+        font-family: 'Galada', cursive;
+    }
+    .img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .img .imgin {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 14px;
+        box-shadow: 5px 4px 10px #747373d1;
+    }
+    
+    .img .imgin img {
+        height: 100;
+        width: 107;
+    }
+    /* .img .imgin .icon {
+        margin: 0px 0px;
+    } */
+    .img .imgin .icon .share {
+        margin: 0px 0px;
+        color: rgb(2, 154, 255);
+    }
+    .img .imgin .icon .trash {
+        margin: 0px 0px;
+        color: rgb(255, 128, 128);
+    }
+    /* .img .imgin input {
+        background-color: red;
+        color: red;
+    } */
+
+    .vt {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Galada', cursive;
+        font-size: 1.7rem;
+        text-align: center;
+        margin: 30px 80px;
+    }
+
+    .vid {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .vid .vidin {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 14px;
+        box-shadow: 5px 4px 10px #575757d1;
+    }
+    .vid .vidin video {
+        height: 150;
+        width: 150;
+    }
+    .vid .vidin .icon .share {
+        background: transparent;
+        margin: 0px 0px;
+        color: rgb(2, 154, 255);
+    }
+    .vid .vidin .icon .trash {
+        margin: 0px 0px;
+        color: rgb(255, 128, 128);
+    }
+    .jm {
+        background-color: #fff;
+        /* display: block;
+        margin-left: auto;
+        margin-right: auto; */
+        width: 300;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .jm h1 {
+        font-size: 1.5rem;
+    }
+    .lote {
+        margin-top: 10%;
+    }
+
+    .lote lottie-player {
+        display: block;
+        /* margin-left: auto;
+        margin-right: auto; */
+        margin-top: 0px;
+        margin-bottom: 0px;
+        height: 200;
+        width: 200;
+    }
+    
+}

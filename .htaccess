@@ -1,0 +1,26 @@
+php_value file_uploads On
+php_value max_file_uploads 5
+php_value upload_max_filesize 1024M
+php_value post_max_size 1024M
+php_value max_input_time 3000
+php_value max_execution_time 3000
+php_value max_input_vars 100000000
+
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^my-gallery?$ u/my-gallery 
+ 
+
+RewriteRule ^my-gallery/([0-9a-zA-Z]+)  u/my-gallery.php?f=$1  
+
+
+
+
+
+RewriteRule ^([^\.]+)$ $1.php  
+
+
+
+

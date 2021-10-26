@@ -201,6 +201,6 @@ $(document).on('click', '#signup-btn', function(e) {
 
 
 //* user login pasword forgot handling here *//
-$(document).on('click', '#lo-btn', function(e) {
+// $(document).on('click', '#lo-btn', function(e) {
   
-})
+// })

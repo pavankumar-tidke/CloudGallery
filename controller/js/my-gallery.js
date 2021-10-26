@@ -115,7 +115,7 @@ $(document).on('click', '.theam-btn', function() {
 //** pre hiding element **//.........
 $(".album-view-content, .favourite-content, .divload, .file-status, #side_status_hide, .modaloader, .navbar-status-dropdown").hide();
 $(".navbar-file-status, .signout-loading, .nest-folder, .folder-content").hide();
-
+$('.dropdown-menu').slideDown();
 if (window.screen.width < 500) {
   $(`#home-data-content-recent`).hide();
   $(`.display-filter`).html(`<i class="bi bi-grid-fill"></i>`);

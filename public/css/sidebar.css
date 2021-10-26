@@ -70,10 +70,7 @@
     width: 100%;
     overflow-y: auto !important;
     overflow-X: auto !important;
-}
-.dropdown-menu {
-    transition: transform .2s ease-in-out !important;
-}
+} 
 .col0 {
     color: #01ad1e !important;
 }

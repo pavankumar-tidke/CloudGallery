@@ -343,7 +343,7 @@ function home_content_view() {
             // }
             // audio player big cards
             $(`#audio${x}`).buttonAudioPlayer({
-              src: `http://myapp.local/cloud/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`,
+              src: `http://18.117.246.170/CloudGallery/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`,
               type: "bar-animation",
             });
 
@@ -359,7 +359,7 @@ function home_content_view() {
                           </div>
                           <div class="card-body ms-2">
                               <p class="card-text text text-nowrap my-auto pb-1" id="item_name${x}"title="${responce_obj["recent"][x][2]}">${responce_obj["recent"][x][2]}</p>
-                              <p class="card-text-info text-muted text-nowrap my-auto">Date :- ${responce_obj["recent"][x][3]}</p>
+                              <p class="card-text-info text-muted text-nowrap my-auto">Date :- ${responce_obj["recent"][x][4]}</p>
                           </div>
                       </a>
                       ${mediaCardFooterMobile}
@@ -372,7 +372,7 @@ function home_content_view() {
 
             // audio player list view
             $(`#audioList${x}`).buttonAudioPlayer({
-              src: `http://myapp.local/cloud/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`,
+              src: `http://18.117.246.170/CloudGallery/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`,
               type: "bar-animation",
             });
           }
@@ -415,7 +415,7 @@ function home_content_view() {
                             </div>
                             <div class="card-body ms-2">
                                 <p class="card-text text text-nowrap my-auto pb-1" id="item_name${x}"title="${responce_obj["recent"][x][2]}">${responce_obj["recent"][x][2]}</p>
-                                <p class="card-text-info text-muted text-nowrap my-auto">Date :- ${responce_obj["recent"][x][2]}</p>
+                                <p class="card-text-info text-muted text-nowrap my-auto">Date :- ${responce_obj["recent"][x][4]}</p>
                             </div>
                         </a>
                         ${mediaCardFooterMobile}

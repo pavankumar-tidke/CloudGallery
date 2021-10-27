@@ -37,9 +37,9 @@
 
     
     <?php include '../asset/header.php'; ?>
-    <link rel="stylesheet" href="http://18.117.246.170/CloudGallery/public/css/my-gallery.css?ver=4.8">
-    <link rel="stylesheet" href="http://18.117.246.170/CloudGallery/public/css/modals.css?ver=1.9">
-    <link rel="stylesheet" href="http://18.117.246.170/CloudGallery/asset/library/lit/jquery.treemenu.css">
+    <link rel="stylesheet" href="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/public/css/my-gallery.css?ver=4.8">
+    <link rel="stylesheet" href="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/public/css/modals.css?ver=1.9">
+    <link rel="stylesheet" href="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/asset/library/lit/jquery.treemenu.css">
 
 </head>
 
@@ -217,13 +217,13 @@
 
 
 
-    <script src="http://18.117.246.170/CloudGallery/controller/js/modals.js?ver=2.1"></script>
+    <script src="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/controller/js/modals.js?ver=2.1"></script>
 
-    <script src="http://18.117.246.170/CloudGallery/asset/library/lit/jquery.treemenu.js"></script>
+    <script src="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/asset/library/lit/jquery.treemenu.js"></script>
 
-    <script src="http://18.117.246.170/CloudGallery/controller/js/dynamic_url.js?ver=1.5"></script>
+    <script src="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/controller/js/dynamic_url.js?ver=1.5"></script>
     
-    <script src="http://18.117.246.170/CloudGallery/controller/js/my-gallery.js?ver=8.8"></script>
+    <script src="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/controller/js/my-gallery.js?ver=8.8"></script>
     <script>
         
     </script>

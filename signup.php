@@ -15,7 +15,7 @@
 
     <title>limitless cloud</title>
     <?php include './asset/header.php'; ?>
-    <link rel="stylesheet" href="http://18.117.246.170/CloudGallery/public/css/signup.css?ver=1.8">
+    <link rel="stylesheet" href="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/public/css/signup.css?ver=1.8">
 </head>
 
 <body>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="imgBx">
-                    <img src="http://18.117.246.170/CloudGallery/public/image/smoke.jpg" height="400" width="300" alt="">
+                    <img src="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/public/image/smoke.jpg" height="400" width="300" alt="">
                 </div>
             </div>
 
@@ -81,14 +81,14 @@
                     </div>
                 </div>
                 <div class="imgBx">
-                    <img src="http://18.117.246.170/CloudGallery/public/image/smoke.jpg" height="400" width="300" alt="">
+                    <img src="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/public/image/smoke.jpg" height="400" width="300" alt="">
                 </div>
             </div>
 
             <!-- sign in -->
             <div class="user signinBx" id="signinBx">
                 <div class="imgBx">
-                    <img src="http://18.117.246.170/CloudGallery/public/image/smoke.jpg" height="400" width="300" alt="">
+                    <img src="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/public/image/smoke.jpg" height="400" width="300" alt="">
                 </div>
                 <div class="formBx">
                     <h2>Sign In</h2>
@@ -122,7 +122,7 @@
 
 
     <?php include './asset/footer.php'; ?>
-    <script src="http://18.117.246.170/CloudGallery/controller/js/index.js?ver=1.8"></script>
+    <script src="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/controller/js/index.js?ver=1.8"></script>
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 
 </body>

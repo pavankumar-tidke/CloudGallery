@@ -13,7 +13,7 @@
                 <div class="dropdown sidebar-dropdown user-dropdown  my-auto align-middle">
                     <a href="#" class="d-flex align-items-center link-dark text-decoration-none  my-auto" id="dropdownUser2"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="http://localhost/CloudGallery/public/image/default_user.png" alt=""
+                        <img src="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/public/image/default_user.png" alt=""
                                     width="32" height="32" class="rounded-circle mx-1 align-middle"> 
                     </a>
                     <ul class="dropdown-menu dropdown-menu-lg-start drop-menu text-small border border-secondary shadow bg-dark" aria-labelledby="dropdownUser2">
@@ -35,7 +35,7 @@
             <!-- <div class="dropup sidebar-dropdown user-dropdown  my-auto align-middle">
                 <a href="#" class="d-flex align-items-center link-dark text-decoration-none  my-auto" id="dropdownUser2"
                     data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="http://localhost/CloudGallery/public/image/default_user.png" alt=""
+                    <img src="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/public/image/default_user.png" alt=""
                                 width="32" height="32" class="rounded-circle me-2 align-middle"> 
                 </a>
                 <ul class="dropdown-menu drop-menu text-small border border-secondary shadow bg-dark" aria-labelledby="dropdownUser2">

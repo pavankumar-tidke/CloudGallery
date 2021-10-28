@@ -17,12 +17,12 @@
      
     
     <!-- custom links -->
-    <link rel="stylesheet" href="http://localhost/CloudGallery/asset/library/Audio_Player_jQuery/dist/jquery.button-audio-player.css">
-    <link rel="stylesheet" href="http://localhost/CloudGallery/asset/library/Mangnific_popup/popup.css">
+    <link rel="stylesheet" href="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/asset/library/Audio_Player_jQuery/dist/jquery.button-audio-player.css">
+    <link rel="stylesheet" href="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/asset/library/Mangnific_popup/popup.css">
 
 
 
-    <link rel="stylesheet" href="http://localhost/CloudGallery/public/css/style.css?ver=5.5">
+    <link rel="stylesheet" href="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/public/css/style.css?ver=5.5">
     <!-- <link rel="stylesheet" href="../public/css/media.css?ver=1.6"> -->
-    <link rel="stylesheet" href="http://localhost/CloudGallery/public/css/sidebar.css?ver=5.7">
+    <link rel="stylesheet" href="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/public/css/sidebar.css?ver=5.7">
     

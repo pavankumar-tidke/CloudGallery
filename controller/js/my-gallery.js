@@ -175,7 +175,7 @@ function home_content_view() {
   current_folder_id = 'null'; 
 
   var xhr = new XMLHttpRequest();
-  var url = `http://localhost/CloudGallery/controller/php/fetch_data`;
+  var url = `http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/controller/php/fetch_data`;
 
   let home_content_data = true;
   xhr.open("POST", url, true);
@@ -197,7 +197,7 @@ function home_content_view() {
           }
 
           // media source
-          let media_src = `http://localhost/CloudGallery/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`;
+          let media_src = `http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`;
           let mainCard = ``;
           let mediaCardFooter = `
               <div class="dropdown my-auto media-action">
@@ -341,7 +341,7 @@ function home_content_view() {
             // }
             // audio player big cards
             $(`#audio${x}`).buttonAudioPlayer({
-              src: `http://localhost/CloudGallery/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`,
+              src: `http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`,
               type: "bar-animation",
             });
 
@@ -370,7 +370,7 @@ function home_content_view() {
 
             // audio player list view
             $(`#audioList${x}`).buttonAudioPlayer({
-              src: `http://localhost/CloudGallery/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`,
+              src: `http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`,
               type: "bar-animation",
             });
           }
@@ -474,7 +474,7 @@ function favourite_content_view() {
   // displaying favourite data
   let favourite = true;
   var xhr = new XMLHttpRequest();
-  var url = `http://localhost/CloudGallery/controller/php/fetch_data`;
+  var url = `http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/controller/php/fetch_data`;
 
   xhr.open("POST", url, true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -485,7 +485,7 @@ function favourite_content_view() {
         let Favourite, favFunc = "";
         for (let x = 0; x < responce_obj.favourite.length; x++) {
           // media source
-          let media_src = `http://localhost/CloudGallery/storage/users/${uid}/favourite/${responce_obj["favourite"][x][4]}`;
+          let media_src = `http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/storage/users/${uid}/favourite/${responce_obj["favourite"][x][4]}`;
           let media_item_name = responce_obj["favourite"][x][4];
           let media_category = responce_obj["favourite"][x][3];
           let media_category_id = responce_obj["favourite"][x][2];
@@ -773,7 +773,7 @@ $(document).on("click", ".signout", function () {
 
   let logout = true;
   var xhr = new XMLHttpRequest();
-  var url = `http://localhost/CloudGallery/controller/php/logout`;
+  var url = `http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/controller/php/logout`;
 
   xhr.open("POST", url, true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -781,7 +781,7 @@ $(document).on("click", ".signout", function () {
     if (this.readyState == 4 && this.status == 200) {
       // setTimeout(() => {
         $(".signout-loading").show();
-        window.location.href = `http://localhost/CloudGallery/`;
+        window.location.href = `http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/`;
       // }, 1000);
     }
   };

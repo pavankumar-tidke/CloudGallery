@@ -1,5 +1,5 @@
 <div class="Sidebar d-flex flex-column flex-shrink-0 p-2" id="sidebar">
-    <a href="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery" class="text-decoration-none">
+    <a href="http://localhost/CloudGallery" class="text-decoration-none">
         <div class="d-flex flex-column sb">
             <a class="mx-auto py-0 text side-brand">S G</a>
             <!-- <p class="my-0 mx-auto p-0 text">Smart Gallery</p> -->
@@ -14,8 +14,7 @@
                         id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
                         New
                     </a>
-                    <ul class="dropdown-menu drop-new-menu text-small border-1 border-secondary shadow bg-dark" aria-labelledby="dropdownUser2">
-                        <!-- <li><button class="dropdown-item default-text" data-bs-toggle="modal" data-bs-target="#newAlbum">New Album...</button></li> -->
+                    <ul class="dropdown-menu drop-new-menu text-small border-1 border-secondary shadow bg-dark" aria-labelledby="dropdownUser2"> 
                         <!-- <li>
                             <button class="dropdown-item text" data-bs-toggle="modal" data-bs-target="#newFolder"><i class="bi bi-folder-plus me-3"></i>New Folder...</button>
                         </li> -->
@@ -27,15 +26,13 @@
                                 <label class="custom-file-upload text">
                                     <input type="file" name="file[]" id="sideFileUploadSelect" multiple />
                                     <i class="bi bi-file-earmark-arrow-up me-3"></i>File Upload
-                                </label>
-                                <input type="text" hidden name="navbar_upload_album_id" value="" class="album_id_for_upload">
+                                </label> 
                                 <input type="text" hidden name="navbar_upload_folder_id" value="" class="folder_id_for_upload">
                             </form>
                         </li>
                         <li>
                             <a class="dropdown-item text" href="#"><i class="bi bi-folder-plus me-3"></i>Folder (Coming Soon)</a>
-                        </li>
-                            <!-- <li><a class="dropdown-item text" href="#"></a></li> -->
+                        </li> 
                     </ul>
                 </div>
             </li>

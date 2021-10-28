@@ -23,6 +23,7 @@
 }
 
 
+
 /* for all */
 body .btn-close,
 .btn,
@@ -249,27 +250,43 @@ label {
   }
 }
 
+/* add button */
+.dropup-add  {
+  position: fixed !important;
+  bottom: 85px !important;
+  right: 25px !important;  
+  color: var(--text-color-purple-darkTheam) !important;
+  border: 1px solid var(--text-color-purple-darkTheam) !important;
+  border-radius: 50% !important;  
+  z-index: 100000 !important;  
+  transition: 0.5s !important;
+  box-shadow: 0px 0px 5px #4d4d4d !important;
+}
+.dropup-add .add-btn {
+  color: var(--text-color-purple-darkTheam) !important;
+
+}
 /* Scroll To Top */
 .scrollTop {
   position: fixed;
-  bottom: 800px;
+  bottom: 500px;
   right: 40px;
   width: 60px;
   height: 60px;
-  background: #fff url("http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/public/image/top.png");
+  background: #fff url("../image/top.png");
   border-radius: 50%;
   background-size: 40px;
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
   z-index: 100000;
-  visibility: hidden;
+  visibility: visible;
   opacity: 0;
   transition: 0.5s;
 }
 .scrollTop .active {
-  bottom: 40px;
-  visibility: visible;
+  bottom: 100px !important;
+  visibility: visible !important;
   opacity: 1;
 }
 

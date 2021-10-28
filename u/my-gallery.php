@@ -37,9 +37,9 @@
 
     
     <?php include '../asset/header.php'; ?>
-    <link rel="stylesheet" href="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/public/css/my-gallery.css?ver=4.8">
-    <link rel="stylesheet" href="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/public/css/modals.css?ver=1.9">
-    <link rel="stylesheet" href="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/asset/library/lit/jquery.treemenu.css">
+    <link rel="stylesheet" href="http://localhost/CloudGallery/public/css/my-gallery.css?ver=4.8">
+    <link rel="stylesheet" href="http://localhost/CloudGallery/public/css/modals.css?ver=1.9">
+    <link rel="stylesheet" href="http://localhost/CloudGallery/asset/library/lit/jquery.treemenu.css">
 
 </head>
 
@@ -57,6 +57,44 @@
     -->
     <!-- Scroll To Top -->
     <div class="scrollTop" onclick="scrollToTop()"></div>
+    <!-- mobile add button -->
+    <!-- <div class="border "> -->
+        <!-- <button class="btn add-btn text-center px-2 py-1  rounded-circle">
+            <i class="material-icons mt-1">add</i>
+        </button> -->
+
+        <div class="btn-group dropup dropup-add">
+            <button type="button" class="btn add-btn px-1 py-0" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="material-icons mt-1">add</i>
+            </button>
+            <!-- <ul class="dropdown-menu text-small border border-secondary shadow bg-dark">
+                <li><a class="dropdown-item" href="#">Menu item</a></li>
+                <li><a class="dropdown-item" href="#">Menu item</a></li>
+                <li><a class="dropdown-item" href="#">Menu item</a></li>
+            </ul> -->
+            <ul class="dropdown-menu drop-new-menu text-small border-1 border-secondary shadow bg-dark" aria-labelledby="dropdownUser2"> 
+                <!-- <li>
+                    <button class="dropdown-item text" data-bs-toggle="modal" data-bs-target="#newFolder"><i class="bi bi-folder-plus me-3"></i>New Folder...</button>
+                </li> -->
+                <!-- <li>
+                    <hr class="dropdown-divider text my-1 mx-2">
+                </li> -->
+                <li>
+                    <form class="sidebarForm" id="sideFormUpload">
+                        <label class="custom-file-upload text">
+                            <input type="file" name="file[]" id="sideFileUploadSelect" multiple />
+                            <i class="bi bi-file-earmark-arrow-up me-3"></i>File Upload
+                        </label>
+                        <input type="text" hidden name="navbar_upload_album_id" value="" class="album_id_for_upload">
+                        <input type="text" hidden name="navbar_upload_folder_id" value="" class="folder_id_for_upload">
+                    </form>
+                </li>
+                <li>
+                    <a class="dropdown-item text" href="#"><i class="bi bi-folder-plus me-3"></i>Folder (Coming Soon)</a>
+                </li> 
+            </ul>
+        </div>
+    <!-- </div> -->
     <!-- right click -->
     <?php include './right_click.php'; ?>
 
@@ -191,6 +229,8 @@
 
     
     <!-- bottom navbar -->
+    
+    
 
 
 <h5 class="text-"></h5>
@@ -217,13 +257,13 @@
 
 
 
-    <script src="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/controller/js/modals.js?ver=2.1"></script>
+    <script src="http://localhost/CloudGallery/controller/js/modals.js?ver=2.1"></script>
 
-    <script src="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/asset/library/lit/jquery.treemenu.js"></script>
+    <script src="http://localhost/CloudGallery/asset/library/lit/jquery.treemenu.js"></script>
 
-    <script src="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/controller/js/dynamic_url.js?ver=1.5"></script>
+    <script src="http://localhost/CloudGallery/controller/js/dynamic_url.js?ver=1.5"></script>
     
-    <script src="http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/controller/js/my-gallery.js?ver=8.8"></script>
+    <script src="http://localhost/CloudGallery/controller/js/my-gallery.js?ver=8.8"></script>
     <script>
         
     </script>

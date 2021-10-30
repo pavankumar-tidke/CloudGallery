@@ -23,27 +23,32 @@
 
 
 
-<!-- creating album Modal -->
-<div class="modal fade" id="newAlbum" data-bs-keyboard="false" tabindex="-1"
+<!-- userDrop Modal -->
+<div class="modal fade" id="userDrop" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header">
+            <!-- <div class="modal-header">
                 <h5 class="modal-title text" id="staticBackdropLabel">Create New Album</h5>
                 <button type="button" class="btn-close text" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div> -->
+            <div class="modal-body border border-secondary user-dropdown-modal"> 
+                <ul class="">
+                    <li><a class="dropdown-item" href="#"><i class="material-icons me-4 my-auto">space_dashboard</i><span> Dashboard</span></a></li>
+                    <li><a class="dropdown-item" href="#"><i class="material-icons me-4 my-auto">settings</i><span> Settings</span></a></li>
+                    <li>
+                        <hr class="dropdown-divider text my-1 mx-2">
+                    </li>
+                    <li><button class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#theam"><i class="bi bi-moon-fill me-4 my-auto"></i><!--<i class="material-icons me-4 my-auto">dark_mode</i>--><span class="my-auto"> Theams</span></button></li>
+                    <li>
+                        <hr class="dropdown-divider text my-1 mx-2">
+                    </li>
+                    <li><a class="dropdown-item text-danger signout"><i class="material-icons my-auto me-4">logout</i><span> Log out</span></a></li>
+                </ul> 
             </div>
-            <div class="modal-body">
-                <div class="m-3">
-                    <h6 class="text">Enter Album Name</h6>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="new-album-name" value="Unamed_Album">
-                        <div class="d-flex justify-content-start my-1" id="newAlbum_warn"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
+            <!-- <div class="modal-footer">
                 <button type="button" class="btn default-btn px-5 py-1" id="new-album-create-btn" >Create</button>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

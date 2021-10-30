@@ -39,7 +39,7 @@ $(document).on('change', '#sideFileUploadSelect', function(e) {
     }
 
     function sideUp(form_data, nameid) {
-        var url = `http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/controller/php/insert_data.php`;
+        var url = `http://localhost/CloudGallery/controller/php/insert_data.php`;
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
         xhr.upload.addEventListener('progress', (e) => {
@@ -117,7 +117,7 @@ $(document).on('change', '#navbarfile', function(e) {
     }
 
     function navbarUp(form_data, nameid) {
-        var url = `http://ec2-18-117-246-170.us-east-2.compute.amazonaws.com/CloudGallery/controller/php/insert_data.php`;
+        var url = `http://localhost/CloudGallery/controller/php/insert_data.php`;
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
         xhr.upload.addEventListener('progress', (e) => {

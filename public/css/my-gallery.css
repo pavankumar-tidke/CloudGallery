@@ -1,30 +1,32 @@
-
-
 body {
     /* background: #fff !important; */
     background: var(--body-bg-darkTheam);
     /* background: var(--body-bg-gradiant-darkTheam); */
     margin-bottom: 100px !important;
     /* min-height: 1000px !important; */
-  }
- 
+}
+
+
 /* body content */
+
 .data-img {
     height: 140px;
     width: 140px;
 }
 
 
-
 /* page-content */
+
 .hero-container {
     margin-left: 250px !important;
 }
+
 .page-content {
     padding: 0px 20px;
 }
-  
-.f-name, .a-name {
+
+.f-name,
+.a-name {
     white-space: nowrap;
     width: 90px;
     overflow: hidden;
@@ -33,56 +35,73 @@ body {
 
 
 /** sidebar & navbar**/
-.navbar, .display-filter, .dropup-add {
+
+.navbar,
+.display-filter,
+.dropup-add,
+.userDropBtn {
     display: none !important;
 }
 
 
 /* *************** searchbar  *************** */
+
 .searchbar {
     height: 60px;
     width: 100%;
     background: var(--body-bg-darkTheam);
     color: var(--text-color-purple-darkTheam);
 }
+
+
 /* .searchbar .form-control {
     width: 200px !important;
 } */
+
 .searchbar .form-group {
     background: transparent;
     border-radius: 50px;
-    border: 1px solid #dadada; 
+    border: 1px solid #dadada;
     width: 100% !important;
 }
-.searchbar .form-group button { 
+
+.searchbar .form-group button {
     color: var(--text-color-purple-darkTheam) !important;
 }
+
 .searchbar .form-group input {
-    border-bottom-left-radius: 50px ;
-    border-top-left-radius: 50px ;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
     border: none;
 }
-
 
 .searchbar .user-dropdown .dropdown-menu {
     min-width: 15rem !important;
 }
+
 .searchbar .user-dropdown ul li a,
-.searchbar .user-dropdown ul li button {
-    cursor: pointer;
+.searchbar .user-dropdown ul li button,
+#userDrop .user-dropdown-modal ul li a,
+#userDrop .user-dropdown-modal ul li button {
+    cursor: pointer !important;
     font-size: 14px !important;
     padding: 7px 15px !important;
     margin: auto 5px !important;
 }
-.searchbar .user-dropdown ul li a span {
+
+.searchbar .user-dropdown ul li a span,
+#userDrop .user-dropdown-modal ul li a span {
     margin: auto 0px !important;
 }
-.searchbar .user-dropdown ul li a i {
+
+.searchbar .user-dropdown ul li a i,
+#userDrop .user-dropdown-modal ul li a i {
     font-size: 16px !important;
 }
 
 
 /*** bottom bar **/
+
 .bottombar {
     height: 60px;
     width: 100% !important;
@@ -93,74 +112,71 @@ body {
     z-index: 9999;
     display: none;
 }
-.bottombar button { 
+
+.bottombar button {
     cursor: pointer !important;
     background: transparent !important;
     color: var(--text-color-purple-darkTheam) !important;
 }
+
 .bottombar .menu-icon i {
     font-size: 20px;
     padding: 4px 0px !important;
 }
+
 .bottombar .menu-icon span {
     font-size: 12px;
 }
 
 
-
 /** folder cards view **/
-.folder-content  .single-folder {
+
+.folder-content .single-folder {
     max-width: 220px !important;
 }
-.folder-content  .single-folder .folder-name p {
-    font-size: 15px !important;    
+
+.folder-content .single-folder .folder-name p {
+    font-size: 15px !important;
     font-weight: 500;
     width: 130px !important;
-    white-space: nowrap !important; 
+    white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /****************** home content ******************/
+
+
 /** big card */
+
 .main-card {
     border-radius: 5px;
     width: 14.6rem !important;
     background: var(--body-bg-darkTheam);
     box-shadow: 0px 0px 10px #7a7a7a85;
 }
+
 .main-card .img-div {
     background: var(--body-bg-darkTheam);
 }
+
 .main-card .img-div .fav .btn {
     position: absolute !important;
     padding-right: 0px !important;
     z-index: 99 !important;
 }
+
 .main-card .img-div .fav .btn i {
     color: var(--text-color-purple-darkTheam) !important;
     font-size: 18px !important;
     font-weight: 400;
 }
+
 .card-body {
     padding: 10px 8px !important;
 }
+
 .card-text {
     font-size: 13px;
     white-space: nowrap;
@@ -168,67 +184,84 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 .main-card .img-div img {
     object-fit: contain;
     height: 150px;
 }
+
 .main-card .img-div video {
     width: 230px !important;
     height: 148px !important;
 }
+
 .main-card .img-div .audio {
     width: 200px !important;
     height: 150px !important;
 }
 
+
 /** big cards audio btn config */
+
 .bap-btn {
     height: 100px !important;
     width: 60px !important;
 }
+
 .bap-btn-bar-animation {
     color: var(--text-color-purple-darkTheam) !important;
     background: transparent !important;
     margin-bottom: 0px !important;
 }
+
 .bap-btn-bar-animation .bap-bar {
     width: 4px !important;
     margin-bottom: 0px !important;
 }
+
 .icon-bold {
     font-weight: bolder !important;
 }
 
 
 /** list card view */
-.list-view  {
+
+.list-view {
     padding: 0px !important;
     --bs-gutter-x: 0rem !important;
 }
+
 .main-card-list {
     border-radius: 5px;
     background: var(--body-bg-darkTheam);
 }
+
 .main-card-list a {
     text-decoration: none !important;
 }
+
 .main-card-list .img-div img {
     border-radius: 5px;
 }
+
 .main-card-list .img-div {
     background: var(--body-bg-darkTheam);
 }
+
 .main-card-list .fav .btn {
     position: relative !important;
 }
+
 .main-card-list .fav .btn i {
     color: var(--text-color-purple-darkTheam) !important;
     font-size: 18px !important;
     font-weight: 400;
 }
+
 .card-body {
     padding: 10px 8px !important;
 }
+
 .main-card-list .card-text {
     font-size: 14px;
     white-space: nowrap;
@@ -236,6 +269,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 .main-card-list .card-text-info {
     font-size: 12px;
     white-space: nowrap;
@@ -243,44 +277,56 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 .main-card-list .img-div img {
     object-fit: contain;
     height: 30px;
 }
+
 .main-card-list .img-div video {
     width: 230px !important;
     height: 148px !important;
 }
+
 .main-card-list .img-div .audio {
     width: 200px !important;
     height: 150px !important;
 }
 
+
 /* list view audio btn config */
+
 .main-card-list .bap-btn {
     height: 50px !important;
     width: 50px !important;
 }
+
 .main-card-list .bap-btn-bar-animation {
     color: var(--text-color-purple-darkTheam) !important;
     background: transparent !important;
     margin-bottom: 0px !important;
 }
+
 .main-card-list .bap-btn-bar-animation .bap-bar {
     width: 3px !important;
     margin-bottom: 0px !important;
 }
+
 .main-card-list .icon-bold {
     font-weight: small !important;
 }
+
 .bap-btn-bar-animation .bap-bar[data-bap-bar="5"] {
     display: none !important;
 }
+
 .bap-btn-bar-animation .bap-bar[data-bap-bar="4"] {
     display: none !important;
 }
 
+
 /***************** The context-menu *****************************/
+
 .custom-menu {
     display: none;
     z-index: 1000;
@@ -290,23 +336,29 @@ body {
     border-radius: 4px;
     border: 1px solid #af4dff;
 }
+
+
 /* .folder-context-menu */
 
 
-
 /** media-action dropdown **/
+
 .media-action .dropdown-menu,
 .folder-context-menu {
     min-width: 14rem !important;
 }
-.media-action ul li a, button, 
-.folder-context-menu li a, button {
+
+.media-action ul li a,
+button,
+.folder-context-menu li a,
+button {
     color: var(--text-color-white-darkTheam) !important;
     font-size: 15px !important;
     font-weight: 400;
     padding-bottom: 11px;
     background: transparent !important;
 }
+
 .media-action ul li a:hover,
 .media-action ul li button:hover,
 .folder-context-menu li a:hover,
@@ -315,6 +367,7 @@ body {
     color: var(--text-color-purple-darkTheam) !important;
     cursor: pointer !important;
 }
+
 .media-action ul li a i,
 .media-action ul li button i,
 .folder-context-menu li a i,
@@ -324,55 +377,42 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* tablet */
+
 @media screen and (max-width: 800px) {
     /* navbar and sidebar */
-    .Sidebar {
+    .Sidebar,
+    .user-dropdown {
         display: none !important;
     }
-    .searchbar, .mobile-sidebar, .display-filter, .bottombar, .dropup-add {
+    .searchbar,
+    .mobile-sidebar,
+    .display-filter,
+    .bottombar,
+    .dropup-add,
+    .userDropBtn {
         display: block !important;
     }
-    
     /* main page content */
     .hero-container {
         margin-left: 0px !important;
     }
-    .f-name, .a-name {
+    .f-name,
+    .a-name {
         width: auto;
     }
-
     /* home content */
-    .main-card { 
+    .main-card {
         width: 11rem !important;
     }
-    .card-text { 
+    .card-text {
         width: 80px;
     }
     .main-card .img-div img {
         height: 135px !important;
         width: 170px !important;
     }
-    .main-card .img-div  video {
+    .main-card .img-div video {
         height: 130px !important;
         width: 170px !important;
     }
@@ -382,13 +422,15 @@ body {
     }
 }
 
+
 /* mobile */
-@media screen and (max-width: 500px) { 
+
+@media screen and (max-width: 500px) {
     /* home content */
-    .main-card { 
+    .main-card {
         width: 9rem !important;
     }
-    .card-text { 
+    .card-text {
         width: 80px;
     }
     .main-card-list .img-div {
@@ -398,7 +440,7 @@ body {
         height: 130px !important;
         width: 140px !important;
     }
-    .main-card .img-div  video {
+    .main-card .img-div video {
         height: 126px !important;
         width: 140px !important;
     }
@@ -406,32 +448,25 @@ body {
         height: 130px !important;
         width: 130px !important;
     }
-
-    /* search bar */ 
-
+    /* search bar */
     /* folder view */
-    .folder-content  .single-folder {
+    .folder-content .single-folder {
         max-width: 100% !important;
     }
-    .folder-content  .single-folder .folder-name p {
-        font-size: 15px !important;    
+    .folder-content .single-folder .folder-name p {
+        font-size: 15px !important;
         font-weight: 400;
         width: 250px !important;
-        white-space: nowrap !important; 
+        white-space: nowrap !important;
         overflow: hidden !important;
         text-overflow: ellipsis !important;
     }
 }
 
-
-
-
-
-
-
 .signout {
     color: #d30000 !important;
 }
+
 .signout:hover {
     background: transparent !important;
     color: #d30000 !important;

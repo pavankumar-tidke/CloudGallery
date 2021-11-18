@@ -26,25 +26,35 @@
 <!-- userDrop Modal -->
 <div class="modal fade" id="userDrop" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <!-- <div class="modal-header">
                 <h5 class="modal-title text" id="staticBackdropLabel">Create New Album</h5>
                 <button type="button" class="btn-close text" data-bs-dismiss="modal" aria-label="Close"></button>
             </div> -->
             <div class="modal-body border border-secondary user-dropdown-modal"> 
-                <ul class="">
-                    <li><a class="dropdown-item" href="#"><i class="material-icons me-4 my-auto">space_dashboard</i><span> Dashboard</span></a></li>
-                    <li><a class="dropdown-item" href="#"><i class="material-icons me-4 my-auto">settings</i><span> Settings</span></a></li>
-                    <li>
-                        <hr class="dropdown-divider text my-1 mx-2">
-                    </li>
-                    <li><button class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#theam"><i class="bi bi-moon-fill me-4 my-auto"></i><!--<i class="material-icons me-4 my-auto">dark_mode</i>--><span class="my-auto"> Theams</span></button></li>
-                    <li>
-                        <hr class="dropdown-divider text my-1 mx-2">
-                    </li>
-                    <li><a class="dropdown-item text-danger signout"><i class="material-icons my-auto me-4">logout</i><span> Log out</span></a></li>
-                </ul> 
+                <div class="p-0">
+                    <ul class="m-0 p-0">
+                        <li class="my-profile-btn"><a class="dropdown-item"><i class="material-icons me-4 my-auto">space_dashboard</i><span> Dashboard</span></a></li>
+                        <li><a class="dropdown-item" href="#"><i class="material-icons me-4 my-auto">settings</i><span> Settings</span></a></li>
+                        <li>
+                            <hr class="dropdown-divider text my-1 mx-2">
+                        </li>
+                        <li><button class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#theam"><i class="bi bi-moon-fill me-4 my-auto"></i> Themes</button></li>
+                        <li>
+                            <div class="d-flex justify-content-start ms-5">
+                                <button type="button" class="btn  border border-secondary text-dark theam-btn bold rounded-circle py-3 mx-1" id="Light" 
+                                    style="background: rgb(255,255,255) !important; background: linear-gradient(142deg, rgba(255,255,255,1) 54%, rgba(164,164,164,1) 54%) !important;"></button>
+                                <button type="button" class="btn  border border-secondary text-secondary theam-btn bold  rounded-circle border py-3 mx-1" id="Dark" 
+                                    style="background: rgb(0,0,0) !important; background: linear-gradient(142deg, rgba(0,0,0,1) 54%, rgba(153,152,152,1) 54%) !important;"></button> 
+                            </div>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider text my-1 mx-2">
+                        </li>
+                        <li><a class="dropdown-item text-danger signout"><i class="material-icons my-auto me-4">logout</i><span> Log out</span></a></li>
+                    </ul> 
+                </div>
             </div>
             <!-- <div class="modal-footer">
                 <button type="button" class="btn default-btn px-5 py-1" id="new-album-create-btn" >Create</button>
@@ -84,6 +94,40 @@
         </div>
     </div>
 </div>
+
+
+
+<!-- Preview -->
+<div class="preview-div">
+    <div class="modal fade" id="previweModal"  data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content border-1 border-secondary">
+                <div class="modal-header m-0 p-0 border-bottom-0">
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-end  rounded-pill ">
+                        <button type="button" class="btn text-light preview-close" data-bs-dismiss="modal" aria-label="Close"><span class="text-light">CLOSE</span></button>
+                    </div>
+                    <div class="m-1">
+                        <h6 class="media-name text-light"></h6> 
+                        <div class="d-flex justify-content-center">
+                            <div class="my-3" >
+                                <div class="media-view text-light" style="margin-top: 100px !important;"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer m-0 p-0 border-top-0">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 
 

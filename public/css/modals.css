@@ -1,8 +1,10 @@
-
 .modal-content {
-    background: var(--body-bg-darkTheam);
+  background: var(--body-bg-darkTheam);
 }
 
 .modal .default-btn {
-    box-shadow: 0px 0px 2px #e47aff !important;
+  box-shadow: 0px 0px 2px #e47aff !important;
 }
+
+/* modal music player */
+ 

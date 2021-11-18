@@ -1,3 +1,16 @@
+//** pre hiding element **//.........
+$(".album-view-content, .favourite-content, .divload, .file-status, #side_status_hide, .modaloader, .navbar-status-dropdown").hide();
+$(".navbar-file-status, .signout-loading, .nest-folder, .folder-content, .my-profile").hide();
+ 
+if (window.screen.width < 500) {
+  $(`#home-data-content-recent`).hide();
+  $(`.display-filter`).html(`<i class="bi bi-grid-fill"></i>`); 
+} else { 
+  $(`#home-data-content-list-recent`).hide(); 
+}
+
+
+
 
 
 //****** page Entry */ 
@@ -7,7 +20,7 @@ if(urlLastIndex == 'my-gallery') {
   $('.Sidebar .sideul .my_gallery').addClass('nav-link-active').siblings().removeClass('nav-link-active'); 
   $('#favourite-data-content, #folder-data-content').empty()
   $('#favourite-data-content-list, #home-data-content-list-recent').empty()
-  $('.favourite-content, .folder-content').hide();
+  $('.favourite-content, .folder-content, .mobile-file-status-content, .my-profile').hide();
   $('.home-content').show();
   home_content_view();
   $('.divload').hide(); 
@@ -17,9 +30,25 @@ else if(urlLastIndex == 'favourite') {
   $('.Sidebar .sideul .fav').addClass('nav-link-active').siblings().removeClass('nav-link-active')
   $('#home-data-content-recent, #folder-data-content').empty()
   $('#home-data-content-list-recent, #home-data-content-list-recent').empty()
-  $('.home-content').hide(); 
+  $('.home-content, .mobile-file-status-content, .my-profile').hide(); 
   $('.favourite-content, .folder-content').show();
   favourite_content_view();
+  $('.divload').hide(); 
+}
+else if(urlLastIndex == 'dashboard') {
+  $('.Sidebar .sideul .my_gallery').addClass('nav-link-active').siblings().removeClass('nav-link-active'); 
+  $('#home-data-content-recent, #folder-data-content').empty();
+  $('#home-data-content-list-recent, #home-data-content-list-recent').empty();
+  $('.my-profile').show();
+  dashboard_view(); 
+}
+else if(urlLastIndex == 'file-status') { 
+  $('.divload').show(); 
+  // $('#home-data-content-recent, #folder-data-content').empty()
+  // $('#home-data-content-list-recent, #home-data-content-list-recent').empty()
+  $('.home-content, .favourite-content, .my-profile').hide(); 
+  $('.mobile-file-status-content').show();
+  // mobile_file_status_content_view();
   $('.divload').hide(); 
 }
 // else if(urlLastIndex.length === 32) {
@@ -36,9 +65,105 @@ else {
 }
 
 
+//* My Profile *//
+ 
+$(document).on('click', '.my-profile-btn', function() {
+  var urlLastIndex = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+  if(urlLastIndex == 'dashboard') {
+    console.log('not  reload');
+  }
+  else {
+    // changing url
+    dynamic_url("my-gallery/dashboard");
+    $('#home-data-content-recent, #folder-data-content').empty();
+    $('#home-data-content-list-recent, #home-data-content-list-recent').empty(); 
+    dashboard_view();
+     
+  }
+});
+var myChart = undefined;
+function dashboard_view() {  
+  $('.divload').show();  
+  $('.home-content, .favourite-content, .mobile-file-status-content').hide(); 
+  $('.my-profile').show();
+ 
+
+  let dashboard = true;
+  var xhr = new XMLHttpRequest();
+  var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/live_operation`;
+
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) { 
+      let responce_obj = JSON.parse(this.response),
+        photo_count = 0, video_count = 0, song_count = 0, other_count = 0;
+ 
+      responce_obj['dataCount'].map((val) => {
+        let media_name = val[2].split(".").pop();
+        if(media_name == "jpg") {photo_count++;}
+        else if(media_name == "mp4" || media_name == "webm") {video_count++;}
+        else if(media_name == "mp3") {song_count++;}
+        else {other_count++;}
+      });
+      // $('.photo-card h6').text(photo_count);
+      // $('.video-card h6').text(video_count);
+      // $('.song-card h6').text(song_count);
+      // $('.other-card h6').text(other_count); 
+      $('#dataSize').text(responce_obj['dataSize']);
+      
+      //* chart 
+      myChart = new Chart(
+        document.getElementById('myChart'),
+        {
+          type: 'doughnut',
+          data: {
+            labels: [
+              'Photos',
+              'Videos',
+              'Musics',
+              'Other', 
+            ],
+            datasets: [{
+              label: 'User Data',
+              backgroundColor: [
+                'blue',
+                'rgb(255, 99, 132)',
+                'green',
+                'yellow',
+              ],
+              borderColor: [
+                'blue',
+                'rgb(255, 99, 132)',
+                'green',
+                'yellow',
+              ],
+              data: [
+                photo_count,
+                video_count,
+                song_count,
+                other_count,
+              ],
+              barThickness: 50,
+            }]
+          },
+          options: { 
+            radius: 120, 
+          },
+        }
+      );   
+      $('.divload').hide();  
+    }
+  }
+  xhr.send(`dashboard=${dashboard}`);
+  
+}
+ 
 
 
 
+
+ 
 
 //********************* after login first of all we store session token in localstorage **************************//
 function session_token() {
@@ -75,7 +200,7 @@ function session_token() {
 
 // **** Theams **** //
 $(document).on('click', '.theam-btn', function() {
-  let theamColor = $(this).text();          
+  let theamColor = $(this).attr('id');       
 
   if(theamColor == 'Light') {
     $(document.documentElement).css({
@@ -108,20 +233,7 @@ $(document).on('click', '.theam-btn', function() {
   }
 })
 
-
-
  
-
-//** pre hiding element **//.........
-$(".album-view-content, .favourite-content, .divload, .file-status, #side_status_hide, .modaloader, .navbar-status-dropdown").hide();
-$(".navbar-file-status, .signout-loading, .nest-folder, .folder-content").hide();
- 
-if (window.screen.width < 500) {
-  $(`#home-data-content-recent`).hide();
-  $(`.display-filter`).html(`<i class="bi bi-grid-fill"></i>`); 
-} else { 
-  $(`#home-data-content-list-recent`).hide(); 
-}
 
 //** display filter **//
 $(document).on("click", ".display-filter", () => {
@@ -151,8 +263,8 @@ $(document).on("click", "#side-toggle-btn", function () {
 
 //***************************** home content view   *****************************//
 // $('.sideul .my_gallery').addClass('nav-link-active')
-$(document).on("click", "#sidebar-my-gallery-btn", function () { 
-  $('.sideul .my_gallery').addClass('nav-link-active').siblings().removeClass('nav-link-active');
+$(document).on("click", "#sidebar-my-gallery-btn, #botNavHomeCont", function () { 
+  $('.sideul .my_gallery').addClass('nav-link-active').siblings().removeClass('nav-link-active'); 
   var urlLastIndex = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
   if(urlLastIndex == 'my-gallery') {
     console.log('not  reload');
@@ -170,12 +282,13 @@ function home_content_view() {
   $('.divload').show(); 
   $('#favourite-data-content').empty()
   $('#favourite-data-content-list').empty()
-  $('.favourite-content, .folder-content').hide(); 
-
+  $('.favourite-content, .folder-content, .mobile-file-status-content, .my-profile').hide(); 
+  if(myChart != undefined)
+    myChart.destroy();
   current_folder_id = 'null'; 
 
   var xhr = new XMLHttpRequest();
-  var url = `http://localhost/CloudGallery/controller/php/fetch_data`;
+  var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/fetch_data`;
 
   let home_content_data = true;
   xhr.open("POST", url, true);
@@ -197,7 +310,7 @@ function home_content_view() {
           }
 
           // media source
-          let media_src = `http://localhost/CloudGallery/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`;
+          let media_src = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`;
           let mainCard = ``;
           let mediaCardFooter = `
               <div class="dropdown my-auto media-action">
@@ -279,9 +392,11 @@ function home_content_view() {
               $("#home-data-content-recent").append(`
                   <div class="col p-2">
                     <div class="card main-card m-1">
-                      <div class="img-div">
-                        <div class="fav d-flex justify-content-end"><button class="btn m-1 p-0" onclick="${favFunc}" id="favBtn${x}">${Favourite}</button></div>
-                        <video class="mb-0" playsinline controls><source src="${media_src}" type="video/mp4"><source src="${media_src}" type="video/mp4"></video>
+                      <div class="img-div" >
+                      <div class="fav d-flex justify-content-end"><button class="btn m-1 p-0" onclick="${favFunc}" id="favBtn${x}">${Favourite}</button></div>
+                        <div class="  d-flex justify-content-center  " style="height: 50px !important;" onclick="preview(${x}, 'recent', ${responce_obj["recent"][x][0]})"> 
+                          <img src="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/asset/other/play-button.svg" style="height: 60px !important; margin-top: 30px;" class="" />
+                        </div> 
                       </div>
                       <hr class="text my-0">
                       <div class="d-flex justify-content-between me-3">
@@ -294,13 +409,14 @@ function home_content_view() {
                   </div>
               `);
             // }
+
             // list type view
             if (window.screen.width < 500) {
               $("#home-data-content-list-recent").append(`
                     <div class="col">
                       <div class="card main-card-list my-1">
                         <div class="d-flex justify-content-between px-2">
-                          <a href="#" class="d-flex justify-content-between me-3 my-auto">
+                          <a href="#" class="d-flex justify-content-between me-3 my-auto" onclick="preview(${x}, 'recent', ${responce_obj["recent"][x][0]})">
                             <div class="img-div imag my-auto">
                               <i class="bi bi-film me-2 bold text-success"></i>
                             </div>
@@ -315,7 +431,7 @@ function home_content_view() {
                       <hr class="text-muted my-0 py-0">
                     </div>
               `);
-            }
+            } 
           }
           //**** Audio ****//
           else if (responce_obj["recent"][x][2].split(".").pop() == "mp3") {
@@ -326,6 +442,9 @@ function home_content_view() {
                     <div class="card main-card m-1">
                       <div class="img-div">
                         <div class="fav d-flex justify-content-end"><button class="btn m-1 p-0" onclick="${favFunc}" id="favBtn${x}">${Favourite}</button></div>
+                        <div class="  d-flex justify-content-center  " style="height: 50px !important;" onclick="preview(${x}, 'recent', ${responce_obj["recent"][x][0]})"> 
+                          <img src="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/asset/other/dvd-disk.svg" style="height: 60px !important; margin-top: 30px;" class="" />
+                        </div>
                         <div class="d-flex justify-content-center my-auto audio" id="audio${x}"></div>
                       </div>
                       <hr class="text my-0">
@@ -340,10 +459,10 @@ function home_content_view() {
               `);
             // }
             // audio player big cards
-            $(`#audio${x}`).buttonAudioPlayer({
-              src: `http://localhost/CloudGallery/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`,
-              type: "bar-animation",
-            });
+            // $(`#audio${x}`).buttonAudioPlayer({
+            //   src: `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`,
+            //   type: "bar-animation",
+            // });
 
             // list type view
             if (window.screen.width < 500) {
@@ -351,7 +470,7 @@ function home_content_view() {
                 <div class="col">
                   <div class="card main-card-list my-1">
                     <div class="d-flex justify-content-between px-2">
-                      <a href="#" class="d-flex justify-content-between me-3 my-auto">
+                      <a href="#" class="d-flex justify-content-between me-3 my-auto" onclick="preview(${x}, 'recent', ${responce_obj["recent"][x][0]})">
                           <div class="img-div imag my-auto">
                             <i class="bi bi-file-earmark-music me-2 bold text-danger"></i>
                           </div>
@@ -370,7 +489,7 @@ function home_content_view() {
 
             // audio player list view
             $(`#audioList${x}`).buttonAudioPlayer({
-              src: `http://localhost/CloudGallery/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`,
+              src: `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`,
               type: "bar-animation",
             });
           }
@@ -383,10 +502,10 @@ function home_content_view() {
                   <div class="card main-card m-1">
                     <div class="img-div imag">
                         <div class="fav d-flex justify-content-end"><button class="btn m-1 p-0" onclick="${favFunc}" id="favBtn${x}">${Favourite}</button></div>
-                        
+                        <div class="  d-flex justify-content-center  " style="height: 50px !important;" onclick="preview(${x}, 'recent', ${responce_obj["recent"][x][0]})"> 
                             <img src="${media_src}" class="card-img-top"
                                 alt="image" />
-                        
+                        </div>
                     </div>
                     <hr class="text my-0">
                     <div class="d-flex justify-content-between me-3">
@@ -406,7 +525,7 @@ function home_content_view() {
                   <div class="col">
                     <div class="card main-card-list my-1">
                       <div class="d-flex justify-content-between px-2">
-                        <a href="#" class="d-flex justify-content-between me-3 my-auto">
+                        <a href="#" class="d-flex justify-content-between me-3 my-auto" onclick="preview(${x}, 'recent', ${responce_obj["recent"][x][0]})">
                             <div class="img-div imag my-auto">
                                 <img src="${media_src}"
                                     class="card-img-top" alt="image" />
@@ -442,13 +561,13 @@ function home_content_view() {
   xhr.send(`home_content_data=${home_content_data}`);
 }
 // home_content_view();
- 
- 
+  
 
 
 //************************** favourite content view   **************************//
-$(document).on("click", "#sidebar-favourite-btn", function () { 
+$(document).on("click", "#sidebar-favourite-btn, #botNavFavBtn", function () { 
   var urlLastIndex = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+  $('.Sidebar .sideul .fav').addClass('nav-link-active').siblings().removeClass('nav-link-active') 
   if(urlLastIndex == 'favourite') {
     console.log('not  reload');
   }
@@ -466,26 +585,29 @@ function favourite_content_view() {
   $('.divload').show(); 
   $('#home-data-content-recent').empty()
   $('#home-data-content-list-recent').empty()
-  $('.home-content, .folder-content').hide(); 
-  $('.Sidebar .sideul .fav').addClass('nav-link-active').siblings().removeClass('nav-link-active')
+  $('.home-content, .folder-content, .mobile-file-status-content, .my-profile').hide(); 
+  if(myChart != undefined)
+    myChart.destroy();
+    
 
   current_folder_id = 'null'; 
 
   // displaying favourite data
   let favourite = true;
   var xhr = new XMLHttpRequest();
-  var url = `http://localhost/CloudGallery/controller/php/fetch_data`;
+  var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/fetch_data`;
 
   xhr.open("POST", url, true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       let responce_obj = JSON.parse(this.responseText);
+      $('#favourite-data-content').empty();
       if (responce_obj.favourite.length > 0) {
         let Favourite, favFunc = "";
         for (let x = 0; x < responce_obj.favourite.length; x++) {
           // media source
-          let media_src = `http://localhost/CloudGallery/storage/users/${uid}/favourite/${responce_obj["favourite"][x][4]}`;
+          let media_src = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/storage/users/${uid}/favourite/${responce_obj["favourite"][x][4]}`;
           let media_item_name = responce_obj["favourite"][x][4];
           let media_category = responce_obj["favourite"][x][3];
           let media_category_id = responce_obj["favourite"][x][2];
@@ -556,7 +678,9 @@ function favourite_content_view() {
                     <div class="card main-card m-1">
                       <div class="img-div">
                         <div class="fav d-flex justify-content-end"><button class="btn m-1 p-0" onclick="${favFunc}" id="favBtn${x}">${Favourite}</button></div>
-                        <video class="mb-0" playsinline controls><source src="${media_src}" type="video/mp4"><source src="${media_src}" type="video/mp4"></video>
+                        <div class="  d-flex justify-content-center  " style="height: 50px !important;" onclick="preview(${x}, 'recent', ${media_category_id})"> 
+                          <img src="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/asset/other/play-button.svg" style="height: 60px !important; margin-top: 30px;" class="" />
+                        </div>
                       </div>
                       <hr class="text my-0">
                       <div class="d-flex justify-content-between me-3">
@@ -610,7 +734,9 @@ function favourite_content_view() {
                     <div class="card main-card m-1">
                       <div class="img-div">
                         <div class="fav d-flex justify-content-end"><button class="btn m-1 p-0" onclick="${favFunc}" id="favBtn${x}">${Favourite}</button></div>
-                        <div class="d-flex justify-content-center my-auto audio" id="favAudio${x}"></div>
+                        <div class="  d-flex justify-content-center  " style="height: 50px !important;" onclick="preview(${x}, 'recent', ${media_category_id})"> 
+                          <img src="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/asset/other/dvd-disk.svg" style="height: 60px !important; margin-top: 30px;" class="" />
+                        </div>
                       </div>
                       <hr class="text my-0">
                       <div class="d-flex justify-content-between me-3">
@@ -677,11 +803,11 @@ function favourite_content_view() {
                 <div class="col p-2" id="favCardId${x}">
                   <div class="card main-card m-1">
                     <div class="img-div imag">
-                        <div class="fav d-flex justify-content-end"><button class="btn m-1 p-0" onclick="${favFunc}" id="favBtn${x}">${Favourite}</button></div>
-                        <a href="${media_src}">
+                        <div class="fav d-flex justify-content-end"><button class="btn m-1 p-0" onclick="${favFunc}" id="favBtn${x}">${Favourite}</button></div> 
+                        <div class="  d-flex justify-content-center  " style="height: 50px !important;" onclick="preview(${x}, 'recent', ${media_category_id})"> 
                             <img src="${media_src}" class="card-img-top"
                                 alt="image" />
-                        </a>
+                        </div>
                     </div>
                     <hr class="text my-0">
                     <div class="d-flex justify-content-between me-3">
@@ -702,7 +828,7 @@ function favourite_content_view() {
                   <div class="col">
                     <div class="card main-card-list my-1">
                       <div class="d-flex justify-content-between px-2">
-                        <a href="#" class="d-flex justify-content-between me-3 my-auto">
+                        <a onclick="preview(${x}, 'recent', ${media_category_id})" class="d-flex justify-content-between me-3 my-auto">
                             <div class="img-div imag my-auto">
                                 <img src="${media_src}"
                                     class="card-img-top" alt="image" />
@@ -745,6 +871,24 @@ function favourite_content_view() {
 
 
 
+
+// mobile file status view
+$(document).on('click', '#file-status', function() {
+  var urlLastIndex = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+  if(urlLastIndex == 'file-status') {
+    console.log('not  reload');
+  }
+  else {
+    // changing url
+    dynamic_url("my-gallery/file-status");
+    // mobile_file_status_content_view();
+    if(myChart != undefined)
+      myChart.destroy();
+    $('.home-content, .favourite-content, .my-profile').hide(); 
+    $('.mobile-file-status-content').show();  
+  }
+})
+ 
  
  //********************************** ************************* ******************************************//
 //** Double click on albums  **//
@@ -773,7 +917,7 @@ $(document).on("click", ".signout", function () {
 
   let logout = true;
   var xhr = new XMLHttpRequest();
-  var url = `http://localhost/CloudGallery/controller/php/logout`;
+  var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/logout`;
 
   xhr.open("POST", url, true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -781,7 +925,7 @@ $(document).on("click", ".signout", function () {
     if (this.readyState == 4 && this.status == 200) {
       // setTimeout(() => {
         $(".signout-loading").show();
-        window.location.href = `http://localhost/CloudGallery/`;
+        window.location.href = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/`;
       // }, 1000);
     }
   };

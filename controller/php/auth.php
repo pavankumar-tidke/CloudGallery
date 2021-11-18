@@ -78,7 +78,7 @@
                     //     'my_gallery' => $myGalleryObject,
                     // ]);
                     // include '../email/user_signup.php';
-                    if($send == true) {
+                    // if($send == true) {
                         session_start();
                         $_SESSION['loggedin'] = true;
                         $_SESSION['email'] = $email;
@@ -103,10 +103,10 @@
 
                         echo 'true';
                         exit();
-                    }
-                    else {
-                        echo 'emailNotSendErr';
-                    }
+                    // }
+                    // else {
+                    //     echo 'emailNotSendErr';
+                    // }
                 } 
                 else {
                     echo 'acccountNotCreateErr';

@@ -22,19 +22,35 @@ function spa_url_handeling() {
     $('.Sidebar .sideul .my_gallery').addClass('nav-link-active').siblings().removeClass('nav-link-active'); 
     $('#favourite-data-content, #folder-data-content').empty()
     $('#favourite-data-content-list, #home-data-content-list-recent').empty()
-    $('.favourite-content, .folder-content').hide();
+    $('.favourite-content, .folder-content, .mobile-file-status-content, .my-profile').hide();
     $('.home-content').show();
     home_content_view();
     $('.divload').hide(); 
+    myChart.destroy();
   } 
   else if(urlLastIndex == 'favourite') {
     $('.divload').show();
     $('.Sidebar .sideul .fav').addClass('nav-link-active').siblings().removeClass('nav-link-active')
     $('#home-data-content-recent, #folder-data-content').empty()
     $('#home-data-content-list-recent, #home-data-content-list-recent').empty()
-    $('.home-content').hide(); 
-    $('.favourite-content, .folder-content').show();
+    $('.home-content, .mobile-file-status-content, .my-profile').hide(); 
+    $('.favourite-content').show();
     favourite_content_view();
+    $('.divload').hide(); 
+  }
+  else if(urlLastIndex == 'dashboard') { 
+    $('.Sidebar .sideul .my_gallery').addClass('nav-link-active').siblings().removeClass('nav-link-active'); 
+    $('#home-data-content-recent, #folder-data-content').empty();
+  $('#home-data-content-list-recent, #home-data-content-list-recent').empty();
+    dashboard_view(); 
+  }
+  else if(urlLastIndex == 'file-status') { 
+    $('.divload').show(); 
+    // $('#home-data-content-recent, #folder-data-content').empty()
+    // $('#home-data-content-list-recent, #home-data-content-list-recent').empty()
+    $('.home-content, .favourite-content, .my-profile').hide(); 
+    $('.mobile-file-status-content').show();
+    // mobile_file_status_content_view();
     $('.divload').hide(); 
   }
   // else if(urlLastIndex.length === 32) {

@@ -7,6 +7,55 @@ body {
 }
 
 
+/* dashboard */
+/* .main-dashboard-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: ". .";
+} */
+
+.main-dashboard-content .data-chart {
+    height: 500px !important;
+    width: 500px !important;
+}
+  
+.info-bg {
+    background: #99f3ff !important;
+}
+.card-border {
+    border: 1px solid #808080;
+}
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#previweModal .modal-content {
+    background: #000000c4 !important;
+}
+#previweModal .media-name { 
+    white-space: nowrap;
+    width: 272px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
 /* body content */
 
 .data-img {
@@ -33,6 +82,12 @@ body {
     text-overflow: ellipsis;
 }
 
+.m-file-status .file-div .progress-file-name {
+    white-space: nowrap;
+    width: 272px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 /** sidebar & navbar**/
 
@@ -79,10 +134,21 @@ body {
     min-width: 15rem !important;
 }
 
+.modal ul {
+    list-style: none;
+}   
+.modal ul li a, 
+.modal ul li button {
+    color: var(--text-color-white-darkTheam);
+} 
+.modal ul li a:hover, 
+.modal ul li a button:hover {
+    background: transparent !important;
+    color: var(--text-color-purple-darkTheam);
+} 
+
 .searchbar .user-dropdown ul li a,
-.searchbar .user-dropdown ul li button,
-#userDrop .user-dropdown-modal ul li a,
-#userDrop .user-dropdown-modal ul li button {
+.searchbar .user-dropdown ul li button {
     cursor: pointer !important;
     font-size: 14px !important;
     padding: 7px 15px !important;
@@ -190,8 +256,8 @@ body {
     height: 150px;
 }
 
-.main-card .img-div video {
-    width: 230px !important;
+.main-card .img-div {
+    /* width: 230px !important; */
     height: 148px !important;
 }
 
@@ -283,9 +349,18 @@ body {
     height: 30px;
 }
 
-.main-card-list .img-div video {
-    width: 230px !important;
-    height: 148px !important;
+.main-card-list .img-div {
+    /* width: 230px !important; */
+    /* height: 148px !important; */
+}
+.preview-div #previewModal .media-view iframe {
+    width: 500px !important;
+    height: 500px !important; 
+}
+
+.preview-div #previewModal .media-view iframe img {
+    width: fit-content !important;
+    height: fit-content !important;
 }
 
 .main-card-list .img-div .audio {
@@ -419,6 +494,10 @@ button {
     .main-card .img-div .audio {
         height: 135px !important;
         width: 175px !important;
+    }
+    .main-dashboard-content .data-chart {
+        height: auto !important;
+        width: auto !important;
     }
 }
 

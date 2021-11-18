@@ -10,6 +10,8 @@ $(document).on('change', '#sideFileUploadSelect', function(e) {
         $(this).animate(500);
     })
 
+    console.log('first');
+
     var form_data = new FormData();
     var fileArr = [];
     var sideFile = document.getElementById('sideFileUploadSelect');
@@ -39,7 +41,7 @@ $(document).on('change', '#sideFileUploadSelect', function(e) {
     }
 
     function sideUp(form_data, nameid) {
-        var url = `http://localhost/CloudGallery/controller/php/insert_data.php`;
+        var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/insert_data.php`;
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
         xhr.upload.addEventListener('progress', (e) => {
@@ -73,75 +75,67 @@ $(document).on('click', '#side_status_hide', function(e){
 })
 
 
-
-
-
-
-
-
-
-// navbar file uploading
-$(document).on('change', '#navbarfile', function(e) {
+//  add btn file uploading 
+$(document).on('change', '#addBtnFileUploadSelect', function(e) {
     e.preventDefault();
-
-    $('.navbar-status-dropdown').show(function() {
+    $('.m-file-status').show(function() {
         $(this).animate(500);
-    })
-
+    });
+console.log('second');
     var form_data = new FormData(); 
-    var fileArr = [];
-    var navbarfile = document.getElementById('navbarfile');
+    var sideFile = document.getElementById('addBtnFileUploadSelect');
+    
+    function addBtnsideFor() {
+        for(let x = 1; x <= sideFile.files.length; x++) {
+            $('.addBtn-multi-file-div').append(`<div class="my-1 mx-1 py-1 file-div" id="addBtnfileDiv${nameFlag}">
+                    <div class="d-flex justify-content-between my-1"> 
+                        <p class="m-0 p-0 progress-file-name text-nowrap pre-status-text" title="${sideFile.files[flag]['name']}">${sideFile.files[flag]['name']}</p>
+                        <p class="text my-auto p-0 progress-complete pre-status-text">0%</p>  
+                    </div>
+                    <div class="progress d-flex my-2">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>`)
 
+            // console.log(sideFile.files[flag]);
+            form_data.append('file', sideFile.files[flag]);
+            addBtnsideUp(form_data, nameFlag);
 
-    async function navFor() {
-        for(let x = 1; x <= navbarfile.files.length; x++) {
-            $('.navbar-status-div').prepend(`<li class="my-1 mx-1 py-1 file-div" id="fileDiv${nameFlag}">
-                                                <div class="d-flex justify-content-between my-1"> 
-                                                    <p class="m-0 p-0 progress-file-name text-nowrap pre-status-text" title="${navbarfile.files[flag]['name']}">${navbarfile.files[flag]['name']}</p>
-                                                    <p class="text my-auto p-0 progress-complete pre-status-text">0%</p>  
-                                                </div>
-                                                <div class="progress d-flex my-2">
-                                                    <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </li>`)
-
-            // console.log(navbarfile.files[flag]);
-            form_data.append('file', navbarfile.files[flag]);
-            navbarUp(form_data, nameFlag);
-            
             flag++;
             nameFlag++;
         }
-        navbarfile.value = '';
-        // flag = 0;   
+        sideFile.value = '';
+        flag = 0;   
+        
     }
 
-    function navbarUp(form_data, nameid) {
-        var url = `http://localhost/CloudGallery/controller/php/insert_data.php`;
+    function addBtnsideUp(form_data, nameid) {
+        var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/insert_data.php`;
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
         xhr.upload.addEventListener('progress', (e) => {
+            // $('.progress-text').html('<p class="loaded-status-text">Uploading...</p>');
             let percent_complete = Math.round((e.loaded / e.total) * 100);
-            $(`.navbar-status-div #fileDiv${nameid} .progress-complete`).text(`${percent_complete}%`);
-            $(`.navbar-status-div #fileDiv${nameid} .progress-complete`).removeClass(`pre-status-text`).addClass(`pre-status-error-text`);
-            $(`.navbar-status-div #fileDiv${nameid} .progress-file-name`).removeClass(`pre-status-text`).addClass(`pre-status-error-text`);
-            $(`.navbar-status-div #fileDiv${nameid} .progress-bar`).css({ 'width': `${percent_complete}%` });
-            $('.navbar-status-dropdown a i').addClass(`pre-status-error-text`)
+            $(`.m-file-status #addBtnfileDiv${nameid} .progress-complete`).text(`${percent_complete}%`);
+            $(`.m-file-status #addBtnfileDiv${nameid} .progress-complete`).removeClass(`pre-status-text`).addClass(`pre-status-error-text`);
+            $(`.m-file-status #addBtnfileDiv${nameid} .progress-file-name`).removeClass(`pre-status-text`).addClass(`pre-status-error-text`);
+            $(`.m-file-status #addBtnfileDiv${nameid} .progress-bar`).css({ 'width': `${percent_complete}%` });
+                    
         })
         xhr.addEventListener('load', (e) => {
             // console.log(xhr.response);
-            $(`.navbar-status-div #fileDiv${nameid} .progress-complete`).removeClass(`pre-status-error-text`).addClass(`success-status-text`);
-            $(`.navbar-status-div #fileDiv${nameid} .progress-file-name`).removeClass(`pre-status-error-text`).addClass(`success-status-text`);
-            $(`.navbar-status-div #fileDiv${nameid} .progress-complete`).html(`<i class="bi bi-check-lg success-status-text"></i>`);
-            $(`.navbar-status-div #fileDiv${nameid} .progress-bar`).css({ 'width': `100%` });   
-            $('.navbar-status-dropdown a i').addClass(`success-status-text`).removeClass(`pre-status-error-text`);
-            
+            $(`.m-file-status #addBtnfileDiv${nameid} .progress-complete`).removeClass(`pre-status-error-text`).addClass(`success-status-text`);
+            $(`.m-file-status #addBtnfileDiv${nameid} .progress-file-name`).removeClass(`pre-status-error-text`).addClass(`success-status-text`);
+            $(`.m-file-status #addBtnfileDiv${nameid} .progress-complete`).html(`<i class="bi bi-check-lg success-status-text"></i>`);
+            $(`.m-file-status #addBtnfileDiv${nameid} .progress-bar`).css({ 'width': `100%` });  
+            // home_content_view(); 
         })
         xhr.send(form_data);
     }
 
-    navFor()
+    addBtnsideFor();
 });
+
 
 
 

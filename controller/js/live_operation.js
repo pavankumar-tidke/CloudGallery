@@ -22,7 +22,7 @@ function add_to_Favourite(i, display_category, media_id, media_name, folder_id=n
     
     // sending request to server for ADD the item to favourite list
     let add_to_Favourite = true;
-    var url = `http://localhost/CloudGallery/controller/php/live_operation`;
+    var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/live_operation`;
     $.ajax({
         url: url,
         type: 'POST',
@@ -56,7 +56,7 @@ function remove_from_Favourite(i, display_category, media_id, media_name) {
     
     // sending request to server for REMOVE the item from favourite list
     let remove_from_Favourite = true;
-    var url = `http://localhost/CloudGallery/controller/php/live_operation`;
+    var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/live_operation`;
     $.ajax({
         url: url,
         type: 'POST',
@@ -77,7 +77,7 @@ function remove_from_Favourite(i, display_category, media_id, media_name) {
 function from_favourite_page_remove_Favourite(i, display_category, category_id, media_id, media_name) {
     // sending request to server for REMOVE the item from favourite list
     let from_favourite_page_remove_Favourite = true;
-    var url = `http://localhost/CloudGallery/controller/php/live_operation`;
+    var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/live_operation`;
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -108,6 +108,60 @@ function from_favourite_page_remove_Favourite(i, display_category, category_id, 
     // })
 }
 
+//***** preview functionallity *****//
+function preview(i, display_category, media_id) {
+    $('#previweModal').modal('show');
+    $('#previweModal .media_id').text(media_id);
+    $('#previweModal .media-view').html(`<span class="spinner-border spinner-border-sm mx-2 text-light" role="status" aria-hidden="true"></span>`);
+    // sending request to server for preview
+    let preview = true;
+    var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/live_operation`;
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () { 
+        if (this.readyState == 4 && this.status == 200) {  
+            let responce_obj = JSON.parse(this.response),
+                media_name = responce_obj[0][2],
+                media_src = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/storage/users/${uid}/recent/${media_name}`,
+                media_view; 
+
+            $('#previweModal .media-name').html(media_name); 
+ 
+            if (media_name.split(".").pop() == "mp4" || media_name.split(".").pop() == "webm") {
+                media_view = `
+                    <iframe height="500" width="300"
+                        src="${media_src}">
+                    </iframe>
+                `;
+                
+            }
+            else if(media_name.split(".").pop() == "mp3") {
+                media_view = `<audio controls>
+                        <source src="${media_src}" type="audio/ogg">
+                        <source src="${media_src}" type="audio/mp3"> 
+                </audio>`;
+  
+            }
+            else {
+                media_view = `
+                    <img src="${media_src}" class="card-img-top" height="100"
+                    alt="image" />
+                `
+            }
+ 
+            $('#previweModal .media-view').html(media_view); 
+        }
+    }
+    xhr.send(`preview=${preview}&display_category=${display_category}&media_id=${media_id}`);
+}
+$(document).on('click', '.preview-close', function() {
+    $('#previweModal').modal("hide"); 
+    $('.media-view').empty(); 
+})
+ 
+
+
 
 
 //***** rename media items functionallity *****//
@@ -129,7 +183,7 @@ $(document).on('click', '#rename-item-btn', (e) => {
 
         // sending request to server for RENAMING
         let rename_item = true;
-        var url = `http://localhost/CloudGallery/controller/php/live_operation`;
+        var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/live_operation`;
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -155,7 +209,7 @@ function share_item(i, display_category, media_id, media_name) {
 
     // sending request to server for creating share link
     let share_item = true;
-    var url = `http://localhost/CloudGallery/controller/php/share_handler`;
+    var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/share_handler`;
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -174,8 +228,7 @@ function share_item(i, display_category, media_id, media_name) {
     }
     xhr.send(`share_item=${share_item}&item_id=${media_id}&display_category=${display_category}`);
 }
-
-
+ 
 //***** move to functionallity *****//
 function move_item(i, display_category, media_id, media_name) {
     $(`#renameItem #card-id`).val(i);
@@ -195,7 +248,7 @@ $(document).on('click', '#move-item-btn', (e) => {
 
         // sending request to server for RENAMING
         let rename_item = true;
-        var url = `http://localhost/CloudGallery/controller/php/live_operation`;
+        var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/live_operation`;
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -215,14 +268,10 @@ $(document).on('click', '#move-item-btn', (e) => {
     }
 })
 
- 
-
-
-
 //***** delete item *****//
 function remove_item(i, display_category, media_id, media_name) {
     let remove_item = true;
-    var url = `http://localhost/CloudGallery/controller/php/live_operation`;
+    var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/live_operation`;
     $.ajax({
         url: url,
         type: 'POST',
@@ -240,4 +289,25 @@ function remove_item(i, display_category, media_id, media_name) {
 }
 
 
+// dashboard set-login-password
+$(document).on('click', '.set_login_pass_btn', function() {
+    let pass = $('.set_login_pass').val();
+    if(pass == '') {
+        $('.set_pass_warn').html(`<p class="text-danger">blank_</p>`);
+    }
+    else {
+        $(this).html(`<span class="spinner-border spinner-border-sm mx-2" role="status" aria-hidden="true"></span>`);
 
+        let set_pass = true;
+        var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/live_operation`;
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function () { 
+            if (this.readyState == 4 && this.status == 200) { 
+
+            }
+        }
+        xhr.send(`set_pass=${set_pass}&pass=${pass}`);
+    }
+});

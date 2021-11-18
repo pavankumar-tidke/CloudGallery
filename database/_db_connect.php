@@ -13,7 +13,7 @@
     // $server_name = 'http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/';
     $server_name = 'localhost';
     $user_name = 'root';
-    $password = '';
+    $password = 'Ganga@1980';
     $database_name = 'cloudgallery';
 
 

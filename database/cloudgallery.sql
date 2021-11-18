@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 26, 2021 at 04:26 AM
+-- Generation Time: Nov 18, 2021 at 09:50 AM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.11
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -62,13 +62,6 @@ CREATE TABLE `folder_data` (
   `favourite` tinyint(1) NOT NULL,
   `date/time` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `folder_data`
---
-
-INSERT INTO `folder_data` (`folder_data_id`, `user_id`, `folder_id`, `media_name`, `favourite`, `date/time`) VALUES
-(1, 26, 'ZmxsWXlMV2c4SWMvN1VkMkUvT3hYZz09', 'IMG_20211015_115030.jpg', 0, '2021-10-18 15:34:42');
 
 -- --------------------------------------------------------
 
@@ -188,7 +181,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `favourite`
 --
 ALTER TABLE `favourite`
-  MODIFY `favourite_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `favourite_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `folder`
@@ -212,7 +205,7 @@ ALTER TABLE `query_answer`
 -- AUTO_INCREMENT for table `recent`
 --
 ALTER TABLE `recent`
-  MODIFY `recent_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `recent_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `support`
@@ -224,7 +217,7 @@ ALTER TABLE `support`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

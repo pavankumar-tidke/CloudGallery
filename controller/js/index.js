@@ -45,25 +45,27 @@ function onSuccess(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
     let google_auth = true;
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/google_auth.php');
+    xhr.open('POST', 'http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/google_auth');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             if (xhr.responseText == 'true') {
                 window.location.href = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/my-gallery`;
-            } else if (xhr.responseText == 'emailNotSendErr') {
-                $('#login_warn').html('<h6 class="text-center text-success">Account is created <span class="text-danger">but, Email not sent !</span></h6>')
-            } else if (xhr.responseText == 'acccountNotCreateErr') {
-                $('#login_warn').html('<h6 class="text-center text-danger">For some reason Account not created !</h6>')
-            } else if (xhr.responseText == 'googleEmailSubNotVerify') {
-                $('#login_warn').html('<h6 class="text-center text-danger">Google sub ID not verified !</h6>')
-            } else if (xhr.responseText == 'errorGoogleEmailNotVerified') {
-                $('#login_warn').html('<h6 class="text-center text-danger">Google Email not verified !</h6>')
-            } else {
-                console.log(xhr.responseText);
+            } 
+            // else if (xhr.responseText == 'emailNotSendErr') {
+            //     $('#login_warn').html('<h6 class="text-center text-success">Account is created <span class="text-danger">but, Email not sent !</span></h6>')
+            // } else if (xhr.responseText == 'acccountNotCreateErr') {
+            //     $('#login_warn').html('<h6 class="text-center text-danger">For some reason Account not created !</h6>')
+            // } else if (xhr.responseText == 'googleEmailSubNotVerify') {
+            //     $('#login_warn').html('<h6 class="text-center text-danger">Google sub ID not verified !</h6>')
+            // } else if (xhr.responseText == 'errorGoogleEmailNotVerified') {
+            //     $('#login_warn').html('<h6 class="text-center text-danger">Google Email not verified !</h6>')
+            // } 
+            else {
+                $('#login_warn').html(`<h6 class="text-center text-danger">${xhr.responseText}</h6>`)
+                // console.log(xhr.responseText);
             }
         } else {
-            console.log('<2');
             $('#login_warn').html('<h6 class="text-center text-warning"><span class="spinner-border spinner-border-sm mx-2" role="status" aria-hidden="true"></span> Please wait...</h6>')
         }
     }
@@ -71,7 +73,7 @@ function onSuccess(googleUser) {
 }
 
 function onFailure(error) {
-    // console.log(error);
+    console.log(error);
 }
 
 function renderButton() {

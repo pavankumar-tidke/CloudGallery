@@ -31,8 +31,8 @@
                     $query = "INSERT INTO `user` (`Name`, `Email`, `sub`) VALUES ('$name', '$email', '$sub')";
                     $result = mysqli_query( $conn, $query );
                     if ($result) {
-                        include '../email/user_signup.php';
-                        if($send == true) {
+                        // include '../email/user_signup.php';
+                        // if($send == true) {
                             session_start();
 
                             // getting info after creating account
@@ -51,13 +51,13 @@
                             // if everything is fine then return true
                             echo 'true';
                             exit();
-                        }
-                        else {
-                            echo 'emailNotSendErr';
-                        }
+                        // }
+                        // else {
+                        //     echo 'emailNotSendErr';
+                        // }
                     } 
                     else {
-                        echo 'acccountNotCreateErr';
+                        echo 'acccountNotCreateErr'.mysqli_error($conn);
                     }
                 }
                 else {
@@ -76,16 +76,16 @@
                         exit();
                     }
                     else {
-                        echo 'googleEmailSubNotVerify';
+                        echo 'googleEmailSubNotVerify'.mysqli_error($conn);
                     }
                 }
             }
             else {
-                echo 'errorGoogleEmailNotVerified';
+                echo 'errorGoogleEmailNotVerified'.mysqli_error($conn);
             }
         } 
         else {
             // Invalid ID token
-            echo 'Invalid_ID_token';
+            echo 'Invalid_ID_token'.mysqli_error($conn);
         }
     }

@@ -4,16 +4,17 @@
     // windows AWS server 2 pass - 4O)Llp!Xzgww2haFWKd7aO-L5CCBf;vN
 
 
-    // http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/cloud/
+    // http://localhost/cloud/
     // localhost
 
 
 
-    // $server_name = 'http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/cloud/';
-    // $server_name = 'http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/';
+    // $server_name = 'http://localhost/cloud/';
+    // $server_name = 'http://localhost/';
     $server_name = 'localhost';
     $user_name = 'root';
-    $password = 'Ganga@1980';
+    // $password = 'Ganga@1980';
+    $password = '';
     $database_name = 'cloudgallery';
 
 

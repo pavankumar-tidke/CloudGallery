@@ -7,14 +7,14 @@
             </div>
             <input type="text" class="form-control align-middle" placeholder="Search..." />
             <button class="btn userDropBtn m-0 p-0 my-auto" data-bs-toggle="modal" data-bs-target="#userDrop" >
-                    <img src="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/public/image/default_user.png" alt=""
+                    <img src="http://localhost/public/image/default_user.png" alt=""
                                 width="32" height="32" class="rounded-circle mx-1 align-middle"> 
             </button>  
                 <!-- user dropdown [START] -->
             <div class="dropdown sidebar-dropdown user-dropdown  my-auto align-middle">
                 <a href="#" class="d-flex align-items-center link-dark text-decoration-none  my-auto" id="dropdownUser2"
                     data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/public/image/default_user.png" alt=""
+                    <img src="http://localhost/public/image/default_user.png" alt=""
                                 width="32" height="32" class="rounded-circle mx-1 align-middle"> 
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg-start drop-menu text-small border border-secondary shadow bg-dark" aria-labelledby="dropdownUser2">

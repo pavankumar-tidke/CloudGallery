@@ -21,7 +21,7 @@ sudo chmod -R 755 /var/www/ -->
  
 
     <!-- cdn scripts -->
-    <script src="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/asset/library/jquery.js"></script>
+    <script src="http://localhost/asset/library/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/a28490de44.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -35,17 +35,17 @@ sudo chmod -R 755 /var/www/ -->
 
     
     <!-- custom scripts -->
-    <script src="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/asset/library/Audio_Player_jQuery/dist/jquery.button-audio-player.js"></script>
-    <script src="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/asset/library/Mangnific_popup/popup.js"></script>
+    <script src="http://localhost/asset/library/Audio_Player_jQuery/dist/jquery.button-audio-player.js"></script>
+    <script src="http://localhost/asset/library/Mangnific_popup/popup.js"></script>
 
 
     
-    <script src="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/js/temp.js?ver=2.1"></script>
+    <script src="http://localhost/controller/js/temp.js?ver=2.1"></script>
 
     
 
-    <script src="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/js/upload.js?ver=3.5"></script>
+    <script src="http://localhost/controller/js/upload.js?ver=3.5"></script>
 
-    <script src="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/js/live_operation.js?ver=1.9"></script>
+    <script src="http://localhost/controller/js/live_operation.js?ver=1.9"></script>
 
     

@@ -8,7 +8,7 @@ $(document).on('change', '#sideFileUploadSelect', function(e) {
     e.preventDefault();
     $('.file-status, #side_status_hide').show(function() {
         $(this).animate(500);
-    })
+    });
 
     console.log('first');
 
@@ -26,7 +26,7 @@ $(document).on('change', '#sideFileUploadSelect', function(e) {
                     <div class="progress d-flex my-2">
                         <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                </div>`)
+                </div>`);
 
             // console.log(sideFile.files[flag]);
             form_data.append('file', sideFile.files[flag]);
@@ -41,7 +41,7 @@ $(document).on('change', '#sideFileUploadSelect', function(e) {
     }
 
     function sideUp(form_data, nameid) {
-        var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/insert_data.php`;
+        var url = `http://localhost/controller/php/insert_data.php`;
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
         xhr.upload.addEventListener('progress', (e) => {
@@ -110,7 +110,7 @@ console.log('second');
     }
 
     function addBtnsideUp(form_data, nameid) {
-        var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/insert_data.php`;
+        var url = `http://localhost/controller/php/insert_data.php`;
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
         xhr.upload.addEventListener('progress', (e) => {

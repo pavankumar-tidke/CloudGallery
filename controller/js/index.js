@@ -45,12 +45,12 @@ function onSuccess(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
     let google_auth = true;
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/google_auth');
+    xhr.open('POST', 'http://localhost/controller/php/google_auth');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             if (xhr.responseText == 'true') {
-                window.location.href = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/my-gallery`;
+                window.location.href = `http://localhost/my-gallery`;
             } 
             // else if (xhr.responseText == 'emailNotSendErr') {
             //     $('#login_warn').html('<h6 class="text-center text-success">Account is created <span class="text-danger">but, Email not sent !</span></h6>')
@@ -98,7 +98,7 @@ $(document).on('click', '#login-btn', function(e) {
         $(this).attr('disabled', true);
         let login = true;
         var xhr = new XMLHttpRequest();
-        var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/auth`;
+        var url = `http://localhost/controller/php/auth`;
 
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -107,7 +107,7 @@ $(document).on('click', '#login-btn', function(e) {
                 if (xhr.responseText == 'true') {
                     // $('#login_warn').html(`<h6 class="text-center text-primary">${xhr.responseText}</h6>`)
                     // setTimeout(function() {
-                    window.location.href = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/my-gallery`;
+                    window.location.href = `http://localhost/my-gallery`;
                     // }, 2000);
                 } else if (xhr.responseText == 'passErr') {
                     $('#login_warn').html('<h6 class="text-center text-danger">Wrong credentials !</h6>')
@@ -147,7 +147,7 @@ $(document).on('click', '#signup-btn', function(e) {
         $(this).attr('disabled', true);
         let signup = true;
         var xhr = new XMLHttpRequest();
-        var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/auth`;
+        var url = `http://localhost/controller/php/auth`;
 
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -156,7 +156,7 @@ $(document).on('click', '#signup-btn', function(e) {
                 if (xhr.responseText == 'true') {
                     $('#signup_warn').html(`<h6 class="text-center text-success">Account Created Successfully, <span class="text-warning">Redirecting...</span></h6>`)
                         // setTimeout(() => {
-                    window.location.href = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/my-gallery`;
+                    window.location.href = `http://localhost/my-gallery`;
                     // }, 2000);
                 } else if (xhr.responseText == 'emailNotSendErr') {
                     $('#signup_warn').html('<h6 class="text-center text-success">Account is created <span class="text-danger">but, Email not sent !</span></h6>')

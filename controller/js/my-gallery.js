@@ -90,7 +90,7 @@ function dashboard_view() {
 
   let dashboard = true;
   var xhr = new XMLHttpRequest();
-  var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/live_operation`;
+  var url = `http://localhost/controller/php/live_operation`;
 
   xhr.open("POST", url, true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -288,7 +288,7 @@ function home_content_view() {
   current_folder_id = 'null'; 
 
   var xhr = new XMLHttpRequest();
-  var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/fetch_data`;
+  var url = `http://localhost/controller/php/fetch_data`;
 
   let home_content_data = true;
   xhr.open("POST", url, true);
@@ -310,7 +310,7 @@ function home_content_view() {
           }
 
           // media source
-          let media_src = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`;
+          let media_src = `http://localhost/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`;
           let mainCard = ``;
           let mediaCardFooter = `
               <div class="dropdown my-auto media-action">
@@ -395,7 +395,7 @@ function home_content_view() {
                       <div class="img-div" >
                       <div class="fav d-flex justify-content-end"><button class="btn m-1 p-0" onclick="${favFunc}" id="favBtn${x}">${Favourite}</button></div>
                         <div class="  d-flex justify-content-center  " style="height: 50px !important;" onclick="preview(${x}, 'recent', ${responce_obj["recent"][x][0]})"> 
-                          <img src="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/asset/other/play-button.svg" style="height: 60px !important; margin-top: 30px;" class="" />
+                          <img src="http://localhost/asset/other/play-button.svg" style="height: 60px !important; margin-top: 30px;" class="" />
                         </div> 
                       </div>
                       <hr class="text my-0">
@@ -443,7 +443,7 @@ function home_content_view() {
                       <div class="img-div">
                         <div class="fav d-flex justify-content-end"><button class="btn m-1 p-0" onclick="${favFunc}" id="favBtn${x}">${Favourite}</button></div>
                         <div class="  d-flex justify-content-center  " style="height: 50px !important;" onclick="preview(${x}, 'recent', ${responce_obj["recent"][x][0]})"> 
-                          <img src="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/asset/other/dvd-disk.svg" style="height: 60px !important; margin-top: 30px;" class="" />
+                          <img src="http://localhost/asset/other/dvd-disk.svg" style="height: 60px !important; margin-top: 30px;" class="" />
                         </div>
                         <div class="d-flex justify-content-center my-auto audio" id="audio${x}"></div>
                       </div>
@@ -460,7 +460,7 @@ function home_content_view() {
             // }
             // audio player big cards
             // $(`#audio${x}`).buttonAudioPlayer({
-            //   src: `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`,
+            //   src: `http://localhost/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`,
             //   type: "bar-animation",
             // });
 
@@ -489,7 +489,7 @@ function home_content_view() {
 
             // audio player list view
             $(`#audioList${x}`).buttonAudioPlayer({
-              src: `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`,
+              src: `http://localhost/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`,
               type: "bar-animation",
             });
           }
@@ -595,7 +595,7 @@ function favourite_content_view() {
   // displaying favourite data
   let favourite = true;
   var xhr = new XMLHttpRequest();
-  var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/fetch_data`;
+  var url = `http://localhost/controller/php/fetch_data`;
 
   xhr.open("POST", url, true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -607,7 +607,7 @@ function favourite_content_view() {
         let Favourite, favFunc = "";
         for (let x = 0; x < responce_obj.favourite.length; x++) {
           // media source
-          let media_src = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/storage/users/${uid}/favourite/${responce_obj["favourite"][x][4]}`;
+          let media_src = `http://localhost/storage/users/${uid}/favourite/${responce_obj["favourite"][x][4]}`;
           let media_item_name = responce_obj["favourite"][x][4];
           let media_category = responce_obj["favourite"][x][3];
           let media_category_id = responce_obj["favourite"][x][2];
@@ -679,7 +679,7 @@ function favourite_content_view() {
                       <div class="img-div">
                         <div class="fav d-flex justify-content-end"><button class="btn m-1 p-0" onclick="${favFunc}" id="favBtn${x}">${Favourite}</button></div>
                         <div class="  d-flex justify-content-center  " style="height: 50px !important;" onclick="preview(${x}, 'recent', ${media_category_id})"> 
-                          <img src="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/asset/other/play-button.svg" style="height: 60px !important; margin-top: 30px;" class="" />
+                          <img src="http://localhost/asset/other/play-button.svg" style="height: 60px !important; margin-top: 30px;" class="" />
                         </div>
                       </div>
                       <hr class="text my-0">
@@ -735,7 +735,7 @@ function favourite_content_view() {
                       <div class="img-div">
                         <div class="fav d-flex justify-content-end"><button class="btn m-1 p-0" onclick="${favFunc}" id="favBtn${x}">${Favourite}</button></div>
                         <div class="  d-flex justify-content-center  " style="height: 50px !important;" onclick="preview(${x}, 'recent', ${media_category_id})"> 
-                          <img src="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/asset/other/dvd-disk.svg" style="height: 60px !important; margin-top: 30px;" class="" />
+                          <img src="http://localhost/asset/other/dvd-disk.svg" style="height: 60px !important; margin-top: 30px;" class="" />
                         </div>
                       </div>
                       <hr class="text my-0">
@@ -917,7 +917,7 @@ $(document).on("click", ".signout", function () {
 
   let logout = true;
   var xhr = new XMLHttpRequest();
-  var url = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/php/logout`;
+  var url = `http://localhost/controller/php/logout`;
 
   xhr.open("POST", url, true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -925,7 +925,7 @@ $(document).on("click", ".signout", function () {
     if (this.readyState == 4 && this.status == 200) {
       // setTimeout(() => {
         $(".signout-loading").show();
-        window.location.href = `http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/`;
+        window.location.href = `http://localhost/`;
       // }, 1000);
     }
   };

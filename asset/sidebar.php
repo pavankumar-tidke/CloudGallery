@@ -1,5 +1,5 @@
 <div class="Sidebar d-flex flex-column flex-shrink-0 p-2" id="sidebar">
-    <a href="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com" class="text-decoration-none">
+    <a href="http://localhost" class="text-decoration-none">
         <div class="d-flex flex-column sb">
             <a class="mx-auto py-0 text side-brand">S G</a>
             <!-- <p class="my-0 mx-auto p-0 text">Smart Gallery</p> -->
@@ -54,10 +54,13 @@
                 <ul class="tree"> 
                 </ul>
     
-            </li> -->
+                </li> -->
             <li class="nav-item normal-link fav mt-2">
                 <a class="ps-4 " id="sidebar-favourite-btn"><i class="bi bi-star me-3"></i>Favourite</a>
             </li>
+            <li class="nav-item normal-link bin bin mt-2">
+                <a class="ps-4 " id="sidebar-favourite-btn"><i class="bi bi-lock me-3"></i>Private</a>
+            </li> 
             <li class="nav-item normal-link bin bin mt-2">
                 <a class="ps-4 " id="sidebar-favourite-btn"><i class="bi bi-trash me-3"></i>Recycle</a>
             </li> 

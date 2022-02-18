@@ -37,9 +37,9 @@
 
     
     <?php include '../asset/header.php'; ?>
-    <link rel="stylesheet" href="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/public/css/my-gallery.css?ver=4.8">
-    <link rel="stylesheet" href="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/public/css/modals.css?ver=1.9">
-    <link rel="stylesheet" href="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/asset/library/lit/jquery.treemenu.css">
+    <link rel="stylesheet" href="http://localhost/public/css/my-gallery.css?ver=4.8">
+    <link rel="stylesheet" href="http://localhost/public/css/modals.css?ver=1.9">
+    <link rel="stylesheet" href="http://localhost/asset/library/lit/jquery.treemenu.css">
 
 </head>
 
@@ -249,7 +249,7 @@
                                 </div> 
                             </div>
                             <div class=" security-info my-4">
-                                <p class="text-muted bold my-auto">Other Settings</p> 
+                                <!-- <p class="text-muted bold my-auto">Other Settings</p> 
                                 <div class="card-border rounded">
                                     <div class=" px-2"> 
                                         <p>Authentication Type : <span>Google Auth</span></p> 
@@ -267,7 +267,7 @@
                                             <span class="set_pass_warn"></span>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div> 
                     </div>
@@ -346,13 +346,13 @@
 
 
 
-    <script src="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/js/modals.js?ver=2.1"></script>
+    <script src="http://localhost/controller/js/modals.js?ver=2.1"></script>
 
-    <script src="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/asset/library/lit/jquery.treemenu.js"></script>
+    <script src="http://localhost/asset/library/lit/jquery.treemenu.js"></script>
 
-    <script src="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/js/dynamic_url.js?ver=1.5"></script>
+    <script src="http://localhost/controller/js/dynamic_url.js?ver=1.5"></script>
     
-    <script src="http://ec2-18-216-1-22.us-east-2.compute.amazonaws.com/controller/js/my-gallery.js?ver=8.8"></script>
+    <script src="http://localhost/controller/js/my-gallery.js?ver=8.8"></script>
     <script>
         
     </script>

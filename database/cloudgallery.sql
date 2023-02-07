@@ -35,33 +35,6 @@ CREATE TABLE `favourite` (
   `favourite_name` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `folder`
---
-
-CREATE TABLE `folder` (
-  `folder_id` int(10) NOT NULL,
-  `user_id` int(10) NOT NULL,
-  `folder_name` text NOT NULL,
-  `date/time` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `folder_data`
---
-
-CREATE TABLE `folder_data` (
-  `folder_data_id` int(255) NOT NULL,
-  `user_id` int(255) DEFAULT NULL,
-  `folder_id` text DEFAULT NULL,
-  `media_name` text DEFAULT NULL,
-  `favourite` tinyint(1) NOT NULL,
-  `date/time` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -133,18 +106,6 @@ CREATE TABLE `user` (
 ALTER TABLE `favourite`
   ADD PRIMARY KEY (`favourite_id`);
 
---
--- Indexes for table `folder`
---
-ALTER TABLE `folder`
-  ADD PRIMARY KEY (`folder_id`);
-
---
--- Indexes for table `folder_data`
---
-ALTER TABLE `folder_data`
-  ADD PRIMARY KEY (`folder_data_id`),
-  ADD UNIQUE KEY `media_name` (`media_name`) USING HASH;
 
 --
 -- Indexes for table `query_answer`
@@ -181,43 +142,31 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `favourite`
 --
 ALTER TABLE `favourite`
-  MODIFY `favourite_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
-
---
--- AUTO_INCREMENT for table `folder`
---
-ALTER TABLE `folder`
-  MODIFY `folder_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `folder_data`
---
-ALTER TABLE `folder_data`
-  MODIFY `folder_data_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `favourite_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `query_answer`
 --
 ALTER TABLE `query_answer`
-  MODIFY `query_ans_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `query_ans_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `recent`
 --
 ALTER TABLE `recent`
-  MODIFY `recent_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `recent_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `support`
 --
 ALTER TABLE `support`
-  MODIFY `query_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `query_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

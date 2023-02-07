@@ -19,7 +19,6 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg-start drop-menu text-small border border-secondary shadow bg-dark" aria-labelledby="dropdownUser2">
                     <li class="my-profile-btn"><a class="dropdown-item" ><i class="material-icons me-4 my-auto">space_dashboard</i><span> Dashboard</span></a></li>
-                    <li><a class="dropdown-item" href="#"><i class="material-icons me-4 my-auto">settings</i><span> Settings</span></a></li>
                     <li>
                         <hr class="dropdown-divider text my-1 mx-2">
                     </li>

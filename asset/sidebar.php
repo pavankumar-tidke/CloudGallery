@@ -15,12 +15,7 @@
                         New
                     </a>
                     <ul class="dropdown-menu drop-new-menu text-small border-1 border-secondary shadow bg-dark" aria-labelledby="dropdownUser2"> 
-                        <!-- <li>
-                            <button class="dropdown-item text" data-bs-toggle="modal" data-bs-target="#newFolder"><i class="bi bi-folder-plus me-3"></i>New Folder...</button>
-                        </li> -->
-                        <!-- <li>
-                            <hr class="dropdown-divider text my-1 mx-2">
-                        </li> -->
+                        
                         <li>
                             <form class="sidebarForm" id="sideFormUpload">
                                 <label class="custom-file-upload text">
@@ -30,9 +25,9 @@
                                 <input type="text" hidden name="navbar_upload_folder_id" value="" class="folder_id_for_upload">
                             </form>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a class="dropdown-item text" href="#"><i class="bi bi-folder-plus me-3"></i>Folder (Coming Soon)</a>
-                        </li> 
+                        </li>  -->
                     </ul>
                 </div>
             </li>
@@ -41,44 +36,22 @@
             </li>
         
             <li class="nav-item normal-link my_gallery mt-2 folder-extend" >
-                <div class="d-flex">
-                    <!-- <div class="d-flex  folder-extend-icon folder-extend-icon-main my-auto ">
-                        <i class="bi bi-caret-right-fill my-auto ms-1 text  "></i>
-                    </div> -->
+                <div class="d-flex"> 
                     <a class="ps-4" id="sidebar-my-gallery-btn">
                         <i class="bi bi-hdd-stack my-auto me-3"></i>My Gallery
                     </a>
                 </div> 
-            </li> 
-            <!-- <li class="nest-folders my-0" >
-                <ul class="tree"> 
-                </ul>
-    
-                </li> -->
+            </li>  
             <li class="nav-item normal-link fav mt-2">
                 <a class="ps-4 " id="sidebar-favourite-btn"><i class="bi bi-star me-3"></i>Favourite</a>
-            </li>
-            <li class="nav-item normal-link bin bin mt-2">
-                <a class="ps-4 " id="sidebar-favourite-btn"><i class="bi bi-lock me-3"></i>Private</a>
             </li> 
             <li class="nav-item normal-link bin bin mt-2">
                 <a class="ps-4 " id="sidebar-favourite-btn"><i class="bi bi-trash me-3"></i>Recycle</a>
             </li> 
-        
-        <!-- <li class="nav-item my-1 sidebar-dropdown">
-            <div class="dropdown">
-                <a class="d-flex align-items-center text link-dark text-decoration-none dropdown-a"
-                    id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-star-fill me-2"></i>Favourte
-                </a>
-                <ul class="dropdown-menu text-small shadow bg-dark dropdown-right" aria-labelledby="dropdownUser2">
-                    <li><a class="dropdown-item text" href="#">Photos</a></li>
-                    <li><a class="dropdown-item text" href="#">Videos</a></li>
-                </ul>
-            </div>
-        </li>  -->
+         
     </ul>
-    <!-- file progress -->
+
+    <!-- file progress [START] -->
     <div class="d-flex justify-content-end">
         <button class="p-0 m-0 btn" id="side_status_hide"><i class="bi bi-x text"></i></button>
     </div>
@@ -88,11 +61,8 @@
         <!-- warnings -->
         <div class="text-center text" id="status_warn"></div>
     </div>
-
-
-    <!-- user dropdown [START] -->
-    
-    <!-- user dropdown [END] -->
+    <!-- file progress [END] -->
+ 
 </div>
 
 

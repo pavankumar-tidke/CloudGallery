@@ -62,8 +62,7 @@
                 <ul class="dropdown-menu text-small shadow bg-dark dropdown-menu-end dropdown-menu-lg-start"
                     aria-labelledby="dropdownUser2">
                     <li><a class="dropdown-item" href="#">Dashboard</a></li>
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li> 
                     <li>
                         <hr class="dropdown-divider text my-1 mx-2">
                     </li>

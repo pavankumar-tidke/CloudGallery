@@ -319,14 +319,8 @@ function home_content_view() {
                     <i class="bi bi-three-dots-vertical my-auto"></i>
                 </a>
                 <ul class="dropdown-menu border border-secondary text-small shadow bg-dark dropdown-right" aria-labelledby="dropdownUser2">
-                  <li><a class="dropdown-item" href="#"><i class="material-icons me-2 my-auto">visibility</i>Preview</a></li>
-                  <li><a class="dropdown-item" href="#"><i class="material-icons me-2 my-auto">open_with</i>Open With</a></li>
-                  <li>
-                      <hr class="dropdown-divider text my-1 mx-2">
-                  </li>
+                  
                   <li><button class="dropdown-item" onclick="rename_item(${x}, 'recent', ${responce_obj["recent"][x][0]}, '${responce_obj["recent"][x][2]}')" data-bs-toggle="modal" data-bs-target="#renameItem"><i class="material-icons me-2 my-auto">drive_file_rename_outline</i>Rename</button></li>
-                  <li><button class="dropdown-item" onclick="share_item(${x}, 'recent', ${responce_obj["recent"][x][0]}, '${responce_obj["recent"][x][2]}')" data-bs-toggle="modal" data-bs-target="#shareItem"><i class="material-icons me-2 my-auto">share</i>Share</button></li>
-                  <li><button class="dropdown-item" onclick="move_item(${x}, 'recent', ${responce_obj["recent"][x][0]}, '${responce_obj["recent"][x][2]}')" data-bs-toggle="modal" data-bs-target="#moveItem"><i class="material-icons me-2 my-auto">drive_file_move</i>Move to</button></li>
                   <li>
                       <hr class="dropdown-divider text my-1 mx-2">
                   </li>
@@ -352,19 +346,11 @@ function home_content_view() {
                   </a>
                   <ul class="dropdown-menu border border-secondary text-small shadow bg-dark dropdown-right"
                     aria-labelledby="dropdownUser2">
-                    <li><a class="dropdown-item" href="#"><i
-                                class="material-icons me-2 my-auto">visibility</i>Preview</a>
-                    </li>
-                    <li><a class="dropdown-item" href="#"><i
-                                class="material-icons me-2 my-auto">open_with</i>Open
-                            With</a>
-                    </li>
+                     
                     <li>
                         <hr class="dropdown-divider text my-1 mx-2">
                     </li>
-                    <li><button class="dropdown-item" onclick="rename_item(${x}, 'recent', ${responce_obj["recent"][x][0]}, '${responce_obj["recent"][x][2]}')" data-bs-toggle="modal" data-bs-target="#renameItem"><i class="material-icons me-2 my-auto">drive_file_rename_outline</i>Rename</button></li>
-                    <li><button class="dropdown-item" onclick="share_item(${x}, 'recent', ${responce_obj["recent"][x][0]}, '${responce_obj["recent"][x][2]}')" data-bs-toggle="modal" data-bs-target="#shareItem"><i class="material-icons me-2 my-auto">share</i>Share</button></li>
-                    <li><button class="dropdown-item" onclick="move_item(${x}, 'recent', ${responce_obj["recent"][x][0]}, '${responce_obj["recent"][x][2]}')" data-bs-toggle="modal" data-bs-target="#moveItem"><i class="material-icons me-2 my-auto">drive_file_move</i>Move to</button></li>
+                    <li><button class="dropdown-item" onclick="rename_item(${x}, 'recent', ${responce_obj["recent"][x][0]}, '${responce_obj["recent"][x][2]}')" data-bs-toggle="modal" data-bs-target="#renameItem"><i class="material-icons me-2 my-auto">drive_file_rename_outline</i>Rename</button></li> 
                     <li>
                         <hr class="dropdown-divider text my-1 mx-2">
                     </li>
@@ -377,8 +363,7 @@ function home_content_view() {
                     <li>
                         <hr class="dropdown-divider text my-1 mx-2">
                     </li>
-                    <li><button class="dropdown-item default-text" data-bs-toggle="modal"
-                              data-bs-target="#newAlbum">New Album...</button></li>
+                     
                   </ul>
                 </div>
               </div>
@@ -623,17 +608,14 @@ function favourite_content_view() {
                   <i class="bi bi-three-dots-vertical my-auto"></i>
               </a>
               <ul class="dropdown-menu border border-secondary text-small shadow bg-dark dropdown-right" aria-labelledby="dropdownUser2">
-                <li><a class="dropdown-item" href="#"><i class="material-icons me-2 my-auto">visibility</i>Preview</a></li>
-                <li><a class="dropdown-item" href="#"><i class="material-icons me-2 my-auto">open_with</i>Open With</a></li>
+                 
                 <li>
                     <hr class="dropdown-divider text my-1 mx-2">
                 </li>
                 <li><a class="dropdown-item" href="${media_src}" download="${media_item_name}"><i class="material-icons me-2 my-auto">file_download</i>Download</a></li>
                 <li><a class="dropdown-item" onclick="remove_item(${x}, 'favourite', ${media_id})"><i class="material-icons me-2 my-auto">delete</i>Remove</a></li>
-                <li>
-                    <hr class="dropdown-divider text my-1 mx-2">
-                </li>
-                <li><button class="dropdown-item default-text" data-bs-toggle="modal" data-bs-target="#newAlbum">New Album...</button></li>
+                
+                 
               </ul>
             </div>
           `;
@@ -644,14 +626,7 @@ function favourite_content_view() {
                   <i class="bi bi-three-dots-vertical my-auto"></i>
               </a>
               <ul class="dropdown-menu border border-secondary text-small shadow bg-dark dropdown-right"
-                  aria-labelledby="dropdownUser2">
-                  <li><a class="dropdown-item" href="#"><i
-                              class="material-icons me-2 my-auto">visibility</i>Preview</a>
-                  </li>
-                  <li><a class="dropdown-item" href="#"><i
-                              class="material-icons me-2 my-auto">open_with</i>Open
-                          With</a>
-                  </li>
+                  aria-labelledby="dropdownUser2"> 
                   <li>
                       <hr class="dropdown-divider text my-1 mx-2">
                   </li>
@@ -660,12 +635,7 @@ function favourite_content_view() {
                   </li>
                   <li><a class="dropdown-item" onclick="remove_item(${x}, 'favourite', ${media_id})"><i
                               class="material-icons me-2 my-auto">delete</i>Remove</a>
-                  </li>
-                  <li>
-                      <hr class="dropdown-divider text my-1 mx-2">
-                  </li>
-                  <li><button class="dropdown-item default-text" data-bs-toggle="modal"
-                          data-bs-target="#newAlbum">New Album...</button></li>
+                  </li> 
               </ul>
             </div>
           `;
@@ -890,7 +860,7 @@ $(document).on('click', '#file-status', function() {
 })
  
  
- //********************************** ************************* ******************************************//
+
 //** Double click on albums  **//
 $(document).on("dblclick", ".album-cols", function () {
   $(this).animate(2000, function () {
@@ -932,503 +902,3 @@ $(document).on("click", ".signout", function () {
   xhr.send(`logout=${logout}`);
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ****  folder nesting ***** //
-// $(document).on('click', '.folder-extend-icon-main', function() {
-//   $('.folder-extend-icon-main i').toggleClass('rotated');
-//   $('.nest-folders ').toggle(()=>{
-//     $(this).animate()
-//   });
-// });
-
-// function toggle_rotate(folder_id ) {
-//   $(`#arrow-${folder_id}  i`).toggleClass('rotated');
-// }
-
-
-// var  nested_folder_obj, folders = '';
-// function nesting_folder() {
-//   let folder_mongo = true;
-//   var xhr = new XMLHttpRequest();
-//   var url = `../php/fetch_data`;
-
-//   xhr.open("POST", url, true);
-//   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-//   xhr.onreadystatechange = function () {
-//     if (this.readyState == 4 && this.status == 200) {
-      
-//       (this.response != '') ? $(`.nest-folders .tree`).html(this.response) : $(`.nest-folders .tree`).html(`<h6 class="text-muted">No folders</h6>`)
-      
-//       // console.log(Object.keys(responce_obj).length);
-//       // for (var [key, val] of Object.entries(nested_folder_obj.my_gallery)) {
-
-//       $(".tree").treemenu({delay:200}) 
-//     }
-//   };
-//   xhr.send(`folder_mongo=${folder_mongo}`);
-// }
-// // nesting_folder() 
-  
-
-
-//*********************************************** context menu for sidebar folders *************************************/ //
-// var folder_context_menu = function(event, r_folder_id) {
-//   event.preventDefault();
-//   // Show contextmenu
-//   $(".folder-context-menu").finish().toggle(100). 
-//   css({
-//       top: event.pageY + "px",
-//       left: event.pageX + "px"
-//   });
-
-//   r_clicked_folder_id = r_folder_id; 
-//   $('#r_folder_id').val(r_folder_id) 
-// } 
-// // If the document is clicked somewhere
-// $(document).bind("mousedown", function (e) {
-  
-//   // If the clicked element is not the menu
-//   if (!$(e.target).parents(".folder-context-menu").length > 0) {
-//       // Hide it
-//       $(".folder-context-menu").hide(100);
-//       // r_clicked_folder_id = '';
-//   }
-// });
-// // If the menu element is clicked
-// $(".folder-context-menu li").click(function(){
-//   // Hide it AFTER the action was triggered
-//   $(".folder-context-menu").hide(100);
-// });
-
-
-//********************************  folder content view  ********************************// 
-// var current_folder_id = null; var r_clicked_folder_id = null;
-// function folder_information(folder_id) {
-//   var urlLastIndex = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
-//   if(urlLastIndex == folder_id) {
-//     console.log('f not loaded.');
-//   }
-//   else {
-//     dynamic_url('my-gallery/'+folder_id);
-
-//     folder_content_view(folder_id)
-//   }
-// }
-// function folder_content_view(folder_id) { 
-//   $('.divload').show(); 
-//   $('#favourite-data-content, #home-data-content-recent').empty()
-//   $('#favourite-data-content-list, #home-data-content-list-recent').empty()
-//   $('.favourite-content, .home-content').hide(); 
- 
-//   current_folder_id = folder_id; 
-
-//   let folder_view = true;
-//   var xhr = new XMLHttpRequest();
-//   var url = `../php/fetch_data`;
-//   xhr.open("POST", url, true);
-//   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-//   xhr.onreadystatechange = function () {
-//     if (this.readyState == 4 && this.status == 200) {
-//       let responce_obj = JSON.parse(this.response);
-//       // console.log(responce_obj['f_responce']); 
-//       let folder_data = responce_obj['f_responce']['folder_data'];
-//       let nested_folders = responce_obj['f_responce']['nested_folders'];
-//       // console.log(nested_folders.length);
-//       // console.log(folder_data.length); 
-      
-//       $('#folder-cards, #folder-data-content, #folder-data-content-list').empty()
-
-//       if(nested_folders == null && folder_data.length == 0) {
-//         $('.folder-card-div p, #folder-cards').empty();
-//         $('.folder-data .folder-data-heading p').empty();
-//         $('.empty-msg').show(()=>{
-//           $(`.empty-msg h6`).text('This folder is empty');
-//         })
-//       }
-//       else {
-//         // folder cards view 
-//         $('.empty-msg').hide();
-//         if(nested_folders != null) {
-//           $('.folder-card-div p').text('Folders');
-          
-//           for(let x = 0; x < nested_folders.length; x++) { 
-//             let decrypt_folder_name = nested_folders[x]['decrypt']; 
-//             let encrypt_folder_name = nested_folders[x]['encrypt'];
-//             let folder_card_actions = `
-//               <div class="dropdown my-auto media-action">
-//                 <a class="d-flex align-items-center text link-dark text-decoration-none my-auto"
-//                     id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-//                     <i class="bi bi-three-dots-vertical my-auto"></i>
-//                 </a>
-//                 <ul class="dropdown-menu border border-secondary text-small shadow bg-dark dropdown-right"
-//                     aria-labelledby="dropdownUser2">
-//                     <li><a class="dropdown-item" href="#"><i
-//                                 class="material-icons me-2 my-auto">visibility</i>Preview</a>
-//                     </li>
-//                     <li><a class="dropdown-item" href="#"><i
-//                                 class="material-icons me-2 my-auto">open_with</i>Open
-//                             With</a>
-//                     </li>
-//                     <li>
-//                         <hr class="dropdown-divider text my-1 mx-2">
-//                     </li>
-//                     <li><a class="dropdown-item" href=" " download=" "><i
-//                                 class="material-icons me-2 my-auto">file_download</i>Download</a>
-//                     </li>
-//                     <li><a class="dropdown-item" onclick="remove_item( , 'favourite',  )"><i
-//                                 class="material-icons me-2 my-auto">delete</i>Remove</a>
-//                     </li>
-//                     <li>
-//                         <hr class="dropdown-divider text my-1 mx-2">
-//                     </li>
-//                     <li><button class="dropdown-item default-text" data-bs-toggle="modal"
-//                             data-bs-target="#newAlbum">New Album...</button></li>
-//                 </ul>
-//               </div>
-//             `;
-
-//             $('#folder-cards').append(`
-//                 <div class="col ">
-//                   <div class="single-folder m-1" oncontextmenu="folder_context_menu(event, '${encrypt_folder_name}')">
-//                       <div class="d-flex justify-content-between rounded border p-2">
-//                           <div class="d-flex">
-//                               <div class="folder-icon my-auto" >
-//                                   <i class="bi bi-folder-fill fs-5 my-auto me-2 text-muted"></i>
-//                               </div>
-//                               <div class="folder-name my-auto">
-//                                   <p class="text-nowrap  my-auto">${decrypt_folder_name}</p>
-//                               </div>
-//                           </div> 
-//                           <div class="dropdown my-auto media-action">
-//                               <a class="d-flex align-items-center text link-dark text-decoration-none my-auto"
-//                                   id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-//                                   <i class="bi bi-three-dots-vertical my-auto"></i>
-//                               </a>
-//                               <ul class="dropdown-menu border border-secondary text-small shadow bg-dark dropdown-right"
-//                                   aria-labelledby="dropdownUser2">
-//                                   <li><a class="dropdown-item" href="#"><i
-//                                               class="material-icons me-2 my-auto">visibility</i>Preview</a>
-//                                   </li>
-//                                   <li><a class="dropdown-item" href="#"><i
-//                                               class="material-icons me-2 my-auto">open_with</i>Open
-//                                           With</a>
-//                                   </li>
-//                                   <li>
-//                                       <hr class="dropdown-divider text my-1 mx-2">
-//                                   </li>
-//                                   <li><a class="dropdown-item" href=" " download=" "><i
-//                                               class="material-icons me-2 my-auto">file_download</i>Download</a>
-//                                   </li>
-//                                   <li><a class="dropdown-item" ><i
-//                                               class="material-icons me-2 my-auto">delete</i>Remove</a>
-//                                   </li>
-//                                   <li>
-//                                       <hr class="dropdown-divider text my-1 mx-2">
-//                                   </li>
-//                                   <li><button class="dropdown-item default-text" data-bs-toggle="modal"
-//                                           data-bs-target="#newAlbum">New Album...</button></li>
-//                               </ul>
-//                           </div> 
-//                       </div>
-//                   </div>
-//                 </div>
-//             `);
-//           }
-//         }
-//         else {
-//           $('.folder-card-div p').empty();
-//         }
-         
- 
-        // folder data view 
-        // if(folder_data.length > 0) { 
-        //   $('.folder-data .folder-data-heading p').text('Files'); 
-          
-        //   var Favourite, favFunc, mediaCardFooterMobile = "";
-        //   for (let x = 0; x < folder_data.length; x++) {
-        //     let media_id = folder_data[x][0];
-        //     let media_name = folder_data[x][3];
-        //     let media_favourite_check = folder_data[x][4];
-        //     let media_datetime = folder_data[x][5]; 
-        //     let media_src = `http://myapp.local/cloud/storage/users/${uid}/folders/${folder_id}/${media_name}`
-
-        //     // checking favourite
-        //     if (media_favourite_check == 1) {
-        //       Favourite = `<i class="material-icons my-auto">favorite</i>`;
-        //       favFunc = `remove_from_Favourite(${x}, 'folder_data', ${media_id}, '${media_name}', '${folder_id}')`;
-        //     } else {
-        //       Favourite = `<i class="material-icons my-auto">favorite_border</i>`;
-        //       favFunc = `add_to_Favourite(${x}, 'folder_data', ${media_id}, '${media_name}', '${folder_id}')`;
-        //     }
-   
-        //     let mainCard = ``;
-        //     let mediaCardFooter = `
-        //         <div class="dropdown my-auto media-action">
-        //           <a class="d-flex align-items-center text link-dark text-decoration-none my-auto"
-        //               id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-        //               <i class="bi bi-three-dots-vertical my-auto"></i>
-        //           </a>
-        //           <ul class="dropdown-menu border border-secondary text-small shadow bg-dark dropdown-right" aria-labelledby="dropdownUser2">
-        //             <li><a class="dropdown-item" href="#"><i class="material-icons me-2 my-auto">visibility</i>Preview</a></li>
-        //             <li><a class="dropdown-item" href="#"><i class="material-icons me-2 my-auto">open_with</i>Open With</a></li>
-        //             <li>
-        //                 <hr class="dropdown-divider text my-1 mx-2">
-        //             </li>
-        //             <li><button class="dropdown-item" onclick="rename_item(${x}, 'folder_data', ${media_id}, '${media_name}')" data-bs-toggle="modal" data-bs-target="#renameItem"><i class="material-icons me-2 my-auto">drive_file_rename_outline</i>Rename</button></li>
-        //             <li><button class="dropdown-item" onclick="share_item(${x}, 'folder_data', ${media_id}, '${media_name}')" data-bs-toggle="modal" data-bs-target="#shareItem"><i class="material-icons me-2 my-auto">share</i>Share</button></li>
-        //             <li><button class="dropdown-item" onclick="move_item(${x}, 'folder_data', ${media_id}, '${media_name}')" data-bs-toggle="modal" data-bs-target="#moveItem"><i class="material-icons me-2 my-auto">drive_file_move</i>Move to</button></li>
-        //             <li>
-        //                 <hr class="dropdown-divider text my-1 mx-2">
-        //             </li>
-        //             <li><a class="dropdown-item" href="${media_src}" download="${media_name}"><i class="material-icons me-2 my-auto">file_download</i>Download</a></li>
-        //             <li><a class="dropdown-item" onclick="remove_item(${x}, 'folder_data', ${media_id}, '${media_name}')"><i class="material-icons me-2 my-auto">delete</i>Remove</a></li>
-        //             <li>
-        //                 <hr class="dropdown-divider text my-1 mx-2">
-        //             </li>
-        //           </ul>
-        //         </div>                          
-        //       </div>
-        //     `;
-        //     if(window.screen.width < 500) {
-        //       mediaCardFooterMobile = `
-        //         <div class="d-flex justify-content-end">
-        //           <div class="fav my-auto">
-        //               <button class="btn my-auto" onclick="${favFunc}" id="favBtn${x}">${Favourite}</button>
-        //           </div>
-        //           <div class="dropdown my-auto media-action">
-        //             <a class="d-flex align-items-center text link-dark text-decoration-none my-auto"
-        //                 id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-        //                 <i class="bi bi-three-dots-vertical my-auto"></i>
-        //             </a>
-        //             <ul class="dropdown-menu border border-secondary text-small shadow bg-dark dropdown-right"
-        //               aria-labelledby="dropdownUser2">
-        //               <li><a class="dropdown-item" href="#"><i
-        //                           class="material-icons me-2 my-auto">visibility</i>Preview</a>
-        //               </li>
-        //               <li><a class="dropdown-item" href="#"><i
-        //                           class="material-icons me-2 my-auto">open_with</i>Open
-        //                       With</a>
-        //               </li>
-        //               <li>
-        //                   <hr class="dropdown-divider text my-1 mx-2">
-        //               </li>
-        //               <li><button class="dropdown-item" onclick="rename_item(${x}, 'folder_data', ${media_id}, '${media_name}')" data-bs-toggle="modal" data-bs-target="#renameItem"><i class="material-icons me-2 my-auto">drive_file_rename_outline</i>Rename</button></li>
-        //               <li><button class="dropdown-item" onclick="share_item(${x}, 'folder_data', ${media_id}, '${media_name}')" data-bs-toggle="modal" data-bs-target="#shareItem"><i class="material-icons me-2 my-auto">share</i>Share</button></li>
-        //               <li><button class="dropdown-item" onclick="move_item(${x}, 'folder_data', ${media_id}, '${media_name}')" data-bs-toggle="modal" data-bs-target="#moveItem"><i class="material-icons me-2 my-auto">drive_file_move</i>Move to</button></li>
-        //               <li>
-        //                   <hr class="dropdown-divider text my-1 mx-2">
-        //               </li>
-        //               <li><a class="dropdown-item" href="${media_src}" download="${media_name}"><i
-        //                           class="material-icons me-2 my-auto">file_download</i>Download</a>
-        //               </li>
-        //               <li><a class="dropdown-item" onclick="remove_item(${x}, 'folder_data', ${media_id}, '${media_name}')"><i
-        //                           class="material-icons me-2 my-auto">delete</i>Remove</a>
-        //               </li>
-        //               <li>
-        //                   <hr class="dropdown-divider text my-1 mx-2">
-        //               </li>
-        //               <li><button class="dropdown-item default-text" data-bs-toggle="modal"
-        //                         data-bs-target="#newAlbum">New Album...</button></li>
-        //             </ul>
-        //           </div>
-        //         </div>
-        //       `;
-        //     }
-  
-        //     // //**** Videos ****//
-        //     if (media_name.split(".").pop() == "mp4" || media_name.split(".").pop() == "webm") {
-        //       // big cards view
-        //       // if (window.screen.width > 500) {
-        //         $("#folder-data-content").append(`
-        //             <div class="col p-2">
-        //               <div class="card main-card m-1">
-        //                 <div class="img-div">
-        //                   <div class="fav d-flex justify-content-end"><button class="btn m-1 p-0" onclick="${favFunc}" id="favBtn${x}">${Favourite}</button></div>
-        //                   <video class="mb-0" playsinline controls><source src="${media_src}" type="video/mp4"><source src="${media_src}" type="video/mp4"></video>
-        //                 </div>
-        //                 <hr class="text my-0">
-        //                 <div class="d-flex justify-content-between me-3">
-        //                   <div class="card-body d-flex">
-        //                     <i class="bi bi-film me-2 bold text-success"></i>
-        //                     <p class="card-text text-nowrap my-auto" id="item_name${x}" title="${media_name}">${media_name}</p>
-        //                   </div>
-        //                   ${mediaCardFooter}
-        //               </div>
-        //             </div>
-        //         `);
-        //       // }
-        //       // list type view
-        //       if (window.screen.width < 500) {
-        //         $("#folder-data-content-list").append(`
-        //               <div class="col">
-        //                 <div class="card main-card-list my-1">
-        //                   <div class="d-flex justify-content-between px-2">
-        //                     <a href="#" class="d-flex justify-content-between me-3 my-auto">
-        //                       <div class="img-div imag my-auto">
-        //                         <i class="bi bi-film me-2 bold text-success"></i>
-        //                       </div>
-        //                       <div class="card-body ms-2">
-        //                         <p class="card-text text text-nowrap my-auto pb-1" id="item_name${x}"title="${media_name}">${media_name}</p>
-        //                         <p class="card-text-info text-muted text-nowrap my-auto">Date :- ${media_datetime}</p>
-        //                       </div>
-        //                     </a>
-        //                     ${mediaCardFooterMobile}
-        //                   </div>
-        //                 </div>
-        //                 <hr class="text-muted my-0 py-0">
-        //               </div>
-        //         `);
-        //       }
-        //     }
-
-        //     // //**** Audio ****//
-        //     else if (media_name.split(".").pop() == "mp3") {
-        //       // big cards view
-        //       // if (window.screen.width > 500) {
-        //         $("#folder-data-content").append(`
-        //             <div class="col p-2">
-        //               <div class="card main-card m-1">
-        //                 <div class="img-div">
-        //                   <div class="fav d-flex justify-content-end"><button class="btn m-1 p-0" onclick="${favFunc}" id="favBtn${x}">${Favourite}</button></div>
-        //                   <div class="d-flex justify-content-center my-auto audio" id="audio${x}"></div>
-        //                 </div>
-        //                 <hr class="text my-0">
-        //                 <div class="d-flex justify-content-between me-3">
-        //                   <div class="card-body d-flex">
-        //                     <i class="material-icons me-2 text-danger">headphones</i>
-        //                     <p class="card-text text-nowrap my-auto" id="item_name${x}" title="${media_name}">${media_name}</p>
-        //                   </div>
-        //                   ${mediaCardFooter}
-        //               </div>
-        //             </div>
-        //         `);
-        //       // }
-
-        //         // audio player big cards
-        //         $(`#audio${x}`).buttonAudioPlayer({
-        //           src: media_src,
-        //           type: "bar-animation",
-        //         });
-  
-        //       // list type view
-        //       if (window.screen.width < 500) {
-        //         $("#folder-data-content-list").append(`
-        //           <div class="col">
-        //             <div class="card main-card-list my-1">
-        //               <div class="d-flex justify-content-between px-2">
-        //                 <a href="#" class="d-flex justify-content-between me-3 my-auto">
-        //                     <div class="img-div imag my-auto">
-        //                       <i class="bi bi-file-earmark-music me-2 bold text-danger"></i>
-        //                     </div>
-        //                     <div class="card-body ms-2">
-        //                         <p class="card-text text text-nowrap my-auto pb-1" id="item_name${x}"title="${media_name}">${media_name}</p>
-        //                         <p class="card-text-info text-muted text-nowrap my-auto">Date :- ${media_datetime}</p>
-        //                     </div>
-        //                 </a>
-        //                 ${mediaCardFooterMobile}
-        //               </div>
-        //             </div>
-        //             <hr class="text-muted my-0 py-0">
-        //           </div>
-        //         `);
-
-        //         // audio player list view
-        //         $(`#audioList${x}`).buttonAudioPlayer({
-        //           src: media_src,
-        //           type: "bar-animation",
-        //         });
-        //       }
-  
-        //     }
-
-        //     // //**** Images ****//
-        //     else {
-        //       // Big cards view
-        //       // if (window.screen.width > 500) {
-        //         $("#folder-data-content").append(`
-        //           <div class="col p-2">
-        //             <div class="card main-card m-1">
-        //               <div class="img-div imag">
-        //                   <div class="fav d-flex justify-content-end"><button class="btn m-1 p-0" onclick="${favFunc}" id="favBtn${x}">${Favourite}</button></div>
-                          
-        //                       <img src="${media_src}" class="card-img-top"
-        //                           alt="image" />
-                          
-        //               </div>
-        //               <hr class="text my-0">
-        //               <div class="d-flex justify-content-between me-3">
-        //                 <div class="card-body d-flex">
-        //                   <i class="material-icons me-2 text-info">image</i>
-        //                   <p class="card-text text-nowrap my-auto" id="item_name${x}" title="${media_name}">${media_name}</p>
-        //                 </div>
-        //                 ${mediaCardFooter}
-        //             </div>
-        //           </div>
-        //         `);
-        //       // }
-  
-        //       // list type view
-        //       if (window.screen.width < 500) {
-        //         $("#home-data-content-list-recent").append(`
-        //             <div class="col">
-        //               <div class="card main-card-list my-1">
-        //                 <div class="d-flex justify-content-between px-2">
-        //                   <a href="#" class="d-flex justify-content-between me-3 my-auto">
-        //                       <div class="img-div imag my-auto">
-        //                           <img src="${media_src}"
-        //                               class="card-img-top" alt="image" />
-        //                       </div>
-        //                       <div class="card-body ms-2">
-        //                           <p class="card-text text text-nowrap my-auto pb-1" id="item_name${x}"title="${media_name}">${media_name}</p>
-        //                           <p class="card-text-info text-muted text-nowrap my-auto">Date :- ${media_datetime}</p>
-        //                       </div>
-        //                   </a>
-        //                   ${mediaCardFooterMobile}
-        //                 </div>
-        //               </div>
-        //               <hr class="text-muted my-0 py-0">
-        //             </div>
-        //         `);
-        //       }
-        //     }
-        //   }
-        // }
-        // else {
-        //   $('.folder-data .folder-data-heading p').empty(); 
-        // }
-
-//       }
-
-//       $('.folder-content').show(()=>{
-//         $('.divload').hide()
-//       })
-//     }
-//   }
-//   xhr.send(`folder_view=${folder_view}&folder_id=${folder_id}`);
-// }

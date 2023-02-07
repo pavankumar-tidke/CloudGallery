@@ -8,27 +8,10 @@
     // localhost
 
 
-
-    // $server_name = 'http://localhost/cloud/';
-    // $server_name = 'http://localhost/';
     $server_name = 'localhost';
     $user_name = 'root';
-    // $password = 'Ganga@1980';
     $password = '';
     $database_name = 'cloudgallery';
-
-
-    // infinity free 
-    // $server_name = 'sql111.epizy.com';
-    // $user_name = 'epiz_27199751';
-    // $password = 'rddV7b590Q';
-    // $database_name = 'epiz_27199751_localhost'; 
-
-    // Vulter
-    // $server_name = '202.182.110.168';
-    // $user_name = 'root';
-    // $password = '1Business@';
-    // $database_name = 'localhost';
 
     $conn = mysqli_connect( $server_name, $user_name, $password, $database_name );
 
@@ -36,14 +19,6 @@
         // header("location: ./server refused.php");
         die("mysql server not connect " . mysqli_connect_error());
     }
-    // else {
-    //     $db = new mongo;
-    //     $collection = $db->user;
-    //     print_r($collection);
-    // } 
-
-
-
 
 
 

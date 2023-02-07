@@ -130,7 +130,7 @@ function preview(i, display_category, media_id) {
  
             if (media_name.split(".").pop() == "mp4" || media_name.split(".").pop() == "webm") {
                 media_view = `
-                    <iframe height="500" width="300"
+                    <iframe height="500" width="500"
                         src="${media_src}">
                     </iframe>
                 `;
@@ -145,7 +145,7 @@ function preview(i, display_category, media_id) {
             }
             else {
                 media_view = `
-                    <img src="${media_src}" class="card-img-top" height="100"
+                    <img src="${media_src}" class="card-img-top" height="1000"
                     alt="image" />
                 `
             }

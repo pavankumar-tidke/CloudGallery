@@ -29,11 +29,6 @@
         $pwd = encrypt_decrypt($str, 'encrypt');
         $dcrypt = encrypt_decrypt($pwd, 'decrypt');
 
-        // MTNWak03VlZnY2ZHYXVibG5hRjdQdz09
-
-        // $hash = hash('md5', $str); 
-        // echo var_dump($hash);
-        // 912967c63ae45de519f389ee69446153148fc6a63d20acc1541c069a2d4b9a1e
         $row = [
             'data' => [
                 'encrypt' => $str,
@@ -45,12 +40,6 @@
             // ]
         ];
 
-        echo ($row) ? json_encode($row) : 'false'.mysqli_error($conn); 
+        echo ($row) ? json_encode($row) : 'false'.mysqli_error($conn);
     }
-
-
-
-// NU54M2hNRDBXdCtGNnlYaUU4bCt0UT09
-// UFRaRUI2QTgvazdpSi9JcENRVUZHdz09
-// UFRaRUI2QTgvazdpSi9JcENRVUZHdz09
 

@@ -107,7 +107,7 @@ else if (isset($_POST['remove_item'])) {
 
 
 
-// dashboard
+//** dashboard ***//
 else if (isset($_POST['dashboard'])) {
 
     $query = "SELECT * FROM `recent` WHERE `user_id` = '$uid'";

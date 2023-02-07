@@ -1,1 +1,1 @@
-# CloudGallery
+# CloudGallery v1.2

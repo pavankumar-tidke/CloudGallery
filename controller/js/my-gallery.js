@@ -23,7 +23,7 @@ if(urlLastIndex == 'my-gallery') {
   $('.favourite-content, .folder-content, .mobile-file-status-content, .my-profile').hide();
   $('.home-content').show();
   home_content_view();
-  $('.divload').hide(); 
+  $('.divload, .search-content').hide(); 
 } 
 else if(urlLastIndex == 'favourite') {
   $('.divload').show();
@@ -264,6 +264,8 @@ $(document).on("click", "#side-toggle-btn", function () {
 //***************************** home content view   *****************************//
 // $('.sideul .my_gallery').addClass('nav-link-active')
 $(document).on("click", "#sidebar-my-gallery-btn, #botNavHomeCont", function () { 
+  $(".search-content").hide();
+  $(".home-content").show();
   $('.sideul .my_gallery').addClass('nav-link-active').siblings().removeClass('nav-link-active'); 
   var urlLastIndex = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
   if(urlLastIndex == 'my-gallery') {

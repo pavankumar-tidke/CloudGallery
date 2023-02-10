@@ -129,7 +129,30 @@
                         <div class="row mx-auto list-view" id="home-data-content-list-recent"></div>
                     </div>
                 </div>
-                <!-- home content [END] -->
+
+
+                <!-- search content [END] -->
+                <!-- search content [START] -->
+                <div class="search-content text my-3"> 
+                    <!-- album list -->
+                    <!-- <div class="mt-4 mb-0">
+                        <p class="text-muted bold">Recent Albums</p>
+                        <div class="row" id="search-data-content-first"></div>
+                    </div> --> 
+                    <!-- Recent added -->
+                    <div class="mt-4 mb-0">
+                        <div class="d-flex justify-content-between">
+                            <p class="text-muted bold my-auto">Search Results</p>
+                            <button class="btn m-0 p-0 bold text-muted display-filter" value="0"></botton>
+                        </div>
+                        <!-- big cards view  -->
+                        <div class="row mx-auto image-link" id="search-data-content-recent"></div>
+                        <img src="" alt="">
+                        <!-- list type cards view  -->
+                        <div class="row mx-auto list-view" id="search-data-content-list-recent"></div>
+                    </div>
+                </div>
+                <!-- search content [END] -->
                 
 
 
@@ -248,62 +271,15 @@
                                     </div>
                                 </div> 
                             </div>
-                            <div class=" security-info my-4">
-                                <!-- <p class="text-muted bold my-auto">Other Settings</p> 
-                                <div class="card-border rounded">
-                                    <div class=" px-2"> 
-                                        <p>Authentication Type : <span>Google Auth</span></p> 
-                                        <div class="my-4">
-                                            <div class="info-bg text-dark rounded py-2">
-                                                <div class="p-2">You are seeing this because, You are logged in with google auth (meaning that no password use), if you want to create password then you can create below,  after this you can login with your password  as well as google auth.</div>
-                                            </div>
-                                            <div class="d-flex justify-content-between form-group my-3">
-                                                <label for="password" class="text-nowrap ps-0">Set Password</label>
-                                                <div class="">
-                                                    <input type="password" class="form-control me-3 set_login_pass">     
-                                                </div>
-                                                <button class="btn info-bg text-dark bold px-4 set_login_pass_btn">Set</button>
-                                            </div>
-                                            <span class="set_pass_warn"></span>
-                                        </div>
-                                    </div>
-                                </div> -->
+                            <div class=" my-4" id="searchresults">
+                                
                             </div>
                         </div> 
                     </div>
 
                 </div>
                 
-
-                <!-- My Profile [END] -->
-
-
-
-                <!-- FOLDER view content [START]-->
-                <!-- <div class="folder-content text my-1">
-                    <div class="text-center my-5 empty-msg">
-                        <h6 class="text-primary"></h6>
-                    </div> -->
-
-                    <!--* folders list -->
-                    <!-- <div class="mt-4 mb-0 folder-card-div">
-                        <p class="text-muted bold"></p>
-                        <div class="row d-flex justify-content-start" id="folder-cards"></div>
-                    </div> -->
-
-                    <!--* folder data -->
-                    <!-- <div class="folder-data">
-                        <div class="d-flex justify-content-between folder-data-heading">
-                            <p class="text-muted bold my-auto mt-4"> </p>
-                            <button class="btn m-0 p-0 bold text-muted display-filter" value="0"></botton>
-                        </div> -->
-                        <!--* big cards view  -->
-                        <!-- <div class="row mx-auto image-link" id="folder-data-content"></div> -->
-                        <!--* list type cards view  -->
-                        <!-- <div class="row mx-auto list-view" id="folder-data-content-list"></div>
-                    </div>
-                </div> -->
-                <!-- FOLDER view content [END]-->
+ 
 
             </div>
 

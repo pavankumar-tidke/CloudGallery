@@ -161,7 +161,38 @@ $(document).on('click', '.preview-close', function() {
 })
  
 
+//***** search functionallity *****//
+function searchmedia() { 
+    // Get the search query
+    var q = document.getElementById("search_query").value;
 
+    // Create the XHR request
+    if(q != "") {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://localhost/controller/php/live_operation?q=" + q, true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                // Update the results 
+                var results = JSON.parse(xhr.responseText);
+                console.log(results);
+                $('.home-content').hide();
+                $('.search-content').show();
+                if(results.length > 0) {
+                    $("#search-data-content-recent").text("No results Found.")
+                } 
+                else {
+                    document.getElementById("search-data-content-recent").innerHTML = results.map(function(result) {
+                        
+                        return result.recent_name;
+                    });
+                }
+            }
+        };
+        xhr.send();
+    } else {
+        $("#search-data-content-recent").text("No results Found.")
+    }
+}
 
 
 //***** rename media items functionallity *****//

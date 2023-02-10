@@ -46,6 +46,6 @@ sudo chmod -R 755 /var/www/ -->
 
     <script src="http://localhost/controller/js/upload.js?ver=3.5"></script>
 
-    <script src="http://localhost/controller/js/live_operation.js?ver=1.9"></script>
+    <script src="http://localhost/controller/js/live_operation.js?ver=2.0"></script>
 
     

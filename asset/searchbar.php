@@ -5,7 +5,7 @@
             <div class="sidebar-toggle mx-2 mt-2">
                 <i class="material-icons">filter_list</i>
             </div>
-            <input type="text" class="form-control align-middle" placeholder="Search..." />
+            <input type="text" name="searchbar" id="search_query" onkeyup="searchmedia()" class="form-control align-middle" placeholder="Search..." />
             <button class="btn userDropBtn m-0 p-0 my-auto" data-bs-toggle="modal" data-bs-target="#userDrop" >
                     <img src="http://localhost/public/image/default_user.png" alt=""
                                 width="32" height="32" class="rounded-circle mx-1 align-middle"> 

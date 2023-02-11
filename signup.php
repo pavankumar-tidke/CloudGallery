@@ -32,19 +32,30 @@
     <!-- forms -->
     <section>
         <div class="container">
+
             <!-- forgot password -->
             <div class="user forgotBx" id="forgotBx">
                 <div class="formBx">
                     <h2>Forgot Password</h2>
+                    <div class="my-3" id="forgot_warn"></div>
                     <div class="form-group my-3">
-                        <input type="email" name="" class="form-control" placeholder="Email Address">
+                        <input type="email" name="forgotEmailInput" id="forgotEmailInput" class="form-control" placeholder="Email Address">
+                    </div>
+                    <div class="form-group my-3 passInput">
+                        <input type="password" name="fpass" id="fpass" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="form-group my-3 passInput">
+                        <input type="password" name="cfpass" id="cfpass" class="form-control" placeholder="Confirm Password">
                     </div>
                     <div class="d-flex justify-content-between">
                         <button class="signup text text-nowrap"> Sign up here</button>
                         <button class="signin text text-nowrap">Sign in here</button>
                     </div>
                     <div class="d-grid gap-2 my-3">
-                        <button class="btn py-2 default-btn" id="forgot-btn">Send Link</button>
+                        <button class="btn py-2 default-btn" id="forgot-btn">Forgot Password</button>
+                    </div>
+                    <div class="d-grid gap-2 my-3">
+                        <button class="btn py-2 default-btn" id="post-forgot-btn">Forgot Password</button>
                     </div>
                 </div>
                 <div class="imgBx">
@@ -66,15 +77,7 @@
                     <div class="form-group my-3">
                         <input type="password" id="password" class="form-control" placeholder="Password">
                     </div>
-                    <!-- <div class="d-flex justify-content-center">
-                        <div class="h-captcha" data-sitekey="80a976d5-36a7-4a03-affb-71c3354619f8" required></div>
-                    </div> -->
-                    <!-- <div class="form-check">
-                        <input class="form-check-input" type="checkbox"  id="showPass">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Show Password
-                        </label>
-                    </div> -->
+
                     <button class="signin btn text text-nowrap"> Sign in here</button>
                     <div class="d-grid gap-2 my-3">
                         <button class="btn py-2 default-btn" id="signup-btn">Create Account</button>
@@ -86,11 +89,11 @@
             </div>
 
             <!-- sign in -->
-            <div class="user signinBx" id="signinBx">
+            <div class="user signinBx my-3" id="signinBx">
                 <div class="imgBx">
                     <img src="http://localhost/public/image/smoke.jpg" height="400" width="300" alt="">
                 </div>
-                <div class="formBx">
+                <div class="formBx my-auto">
                     <h2>Sign In</h2>
                     <div class="my-3" id="login_warn"></div>
                     <div class="form-group my-3">
@@ -106,13 +109,14 @@
                     <div class="d-grid gap-2 my-3">
                         <button class="btn py-2 default-btn" id="login-btn">Log In</button>
                     </div>
-                    <div class="my-4 text-center bold"><span class="text-muted text-center">or</span></div>
+                    <!-- <div class="my-4 text-center bold"><span class="text-muted text-center">or</span></div> -->
                     <div class="d-grid gap-2 my-3">
                         <div id="my-signin2"></div>
                         <!-- <button class="btn py-2 default-btn">With facebook</button> -->
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -123,7 +127,7 @@
 
     <?php include './asset/footer.php'; ?>
     <script src="http://localhost/controller/js/index.js?ver=1.8"></script>
-    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    <!-- <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script> -->
 
 </body>
 

@@ -1,3 +1,5 @@
+$(".passInput, #post-forgot-btn").hide();
+
 $('#signupBx').hide(function() {
     $(this).animate(500)
 })
@@ -141,7 +143,7 @@ $(document).on('click', '#signup-btn', function(e) {
     let hcaptcha = $('[name=h-captcha-response]').val();
 
     if (email == '') {
-        $('#signup_warn').html('<h6 class="text-center text-warning">Nothing should be be blank</h6>')
+        $('#signup_warn').html('<h6 class="text-center text-warning">Nothing should be blank</h6>')
     } else {
         $(this).html('<span class="spinner-border spinner-border-sm mx-2" role="status" aria-hidden="true"></span>Creating Account...');
         $(this).attr('disabled', true);
@@ -188,6 +190,99 @@ $(document).on('click', '#signup-btn', function(e) {
 
 
 //* user login pasword forgot handling here *//
-// $(document).on('click', '#lo-btn', function(e) {
+$(document).on('click', '#forgot-btn', function(e) {
+    let email = $('.forgotBx #forgotEmailInput').val();
 
-// })
+    if (email == '') {
+        $('#forgot_warn').html('<h6 class="text-center text-warning">Nothing should be be blank</h6>')
+    } else {
+        $(this).html('<span class="spinner-border spinner-border-sm mx-2" role="status" aria-hidden="true"></span>Forgot Password...');
+        $(this).attr('disabled', true);
+        let forgot = true;
+        var xhr = new XMLHttpRequest();
+        var url = `http://localhost/controller/php/auth`;
+
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                let x = xhr.responseText;
+                if (xhr.responseText == 'true') {
+                    $("#forgot-btn").hide();
+                    $(".passInput, #post-forgot-btn").show();
+                    $('#forgot_warn').html('<h6 class="text-center text-warning"></h6>')
+                    
+
+
+                } else if (xhr.responseText == 'emailNotExistErr') {
+                    $('#forgot_warn').html('<h6 class="text-center text-warning">Account not found !</h6>')
+                    $('#forgot-btn').text(`Forgot Password`);
+                    $('#forgot-btn').attr('disabled', false);
+                } else {
+                    $('#forgot_warn').html(`<h6 class="text-center text-primary">${xhr.responseText}</h6>`)
+                    $('#forgot-btn').text(`Forgot Password`);
+                    $('#forgot-btn').attr('disabled', false);
+                }
+            }
+        };
+        xhr.send(`forgot=${forgot}&email=${email}`);
+    }
+})
+
+// post forgot
+$(document).on('click', '#post-forgot-btn', function(e) {
+    let email = $('.forgotBx #forgotEmailInput').val();
+    let pass = $('.forgotBx #fpass').val();
+    let cpass = $('.forgotBx #cfpass').val();
+
+    console.log(email, pass, cpass);
+
+    let regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
+    if(email != '' || pass != '' || cpass != '') {
+        if(pass === cpass) {
+            if (regex.test(pass)) {
+                console.log("Valid password");
+    
+                $(this).html('<span class="spinner-border spinner-border-sm mx-2" role="status" aria-hidden="true"></span>Forgot Password...');
+                $(this).attr('disabled', true);
+                let forgot_pass = true;
+                var xhr = new XMLHttpRequest();
+                var url = `http://localhost/controller/php/auth`;
+
+                xhr.open("POST", url, true);
+                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        let x = xhr.responseText;
+                        console.log(x);
+                        if (xhr.responseText == 'true') {
+                            $(".passInput, #forgotEmailInput, #forgot-btn, #post-forgot-btn").hide();
+                            $('#forgot_warn').html('<h6 class="text-center text-success">Password was changed ! Login with new password</h6>')
+
+                        } else if (xhr.responseText == 'emailNotExistErr') {
+                            $('#forgot_warn').html('<h6 class="text-center text-warning">Account not found !</h6>')
+                            $('#forgot-btn').text(`Forgot Password`);
+                            $('#forgot-btn').attr('disabled', false);
+                        } else {
+                            $('#forgot_warn').html(`<h6 class="text-center text-primary">${xhr.responseText}</h6>`)
+                            $('#forgot-btn').text(`Forgot Password`);
+                            $('#forgot-btn').attr('disabled', false);
+                        }
+                    }
+                };
+                xhr.send(`forgot_pass=${forgot_pass}&email=${email}&cpass=${cpass}`);
+    
+            } else {
+                $('#forgot_warn').html('<h6 class="text-center text-warning">Password not valid</h6>')
+            }
+        } else {
+            $('#forgot_warn').html('<h6 class="text-center text-warning">Password not match</h6>')
+        }
+    } else {
+        $('#forgot_warn').html('<h6 class="text-center text-warning">Nothing should be blank</h6>')
+    }
+
+})
+
+// pavankumartidke@gmail.com

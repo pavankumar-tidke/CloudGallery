@@ -4,8 +4,8 @@
 <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container-fluid d-flex justify-content-between">
         <div class="d-flex flex-column nb">
-            <a class="navbar-brand mx-auto py-0 text" href="http://localhost">S G</a>
-            <p class="m-0 p-0 text">Smart Gallery</p>
+            <a class="navbar-brand mx-auto py-0 text" href="/">C G</a>
+            <p class="m-0 p-0 text">Cloud Gallery</p>
         </div>
         <div class="right-item d-flex justify-content-between">
             <!-- uploading status -->
@@ -113,8 +113,8 @@
         echo '<nav class="navbar navbar-expand-lg sticky-top">
                 <div class="container-fluid">
                 <div class="d-flex flex-column nb">
-                    <a class="navbar-brand mx-auto py-0 text" href="/">S G</a>
-                    <p class="m-0 p-0 text">Smart Gallery</p>
+                    <a class="navbar-brand mx-auto py-0 text" href="/">C G</a>
+                    <p class="m-0 p-0 text">Cloud Gallery</p>
                 </div>
                 <button class="navbar-toggler btn-sm border border-light text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="bi bi-list"></i>

@@ -298,6 +298,7 @@ function home_content_view() {
   xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       let responce_obj = JSON.parse(this.responseText);
+      console.log(responce_obj);
       $("#home-data-content-recent").empty();
       if (responce_obj.recent.length > 0) {
         var Favourite, favFunc, mediaCardFooterMobile = "";

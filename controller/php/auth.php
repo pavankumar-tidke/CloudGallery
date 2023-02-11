@@ -9,7 +9,42 @@
 
     // error_reporting(0);
 
-    if(isset($_POST['login'])) {
+
+    if(isset($_POST['forgot'])) {
+        $email = $_POST['email']; 
+        
+        $query = "SELECT * FROM `user` WHERE `Email` = '$email'";
+        $result = mysqli_query( $conn, $query );
+        $num = mysqli_num_rows( $result );
+
+        if ( $num == 1 ) {
+            $row = mysqli_fetch_assoc( $result );
+            echo 'true';
+        } 
+        else {
+            echo 'emailNotExistErr';
+        }
+    }
+    else if(isset($_POST['forgot_pass'])) {
+        $email = $_POST['email']; 
+        $cpass = $_POST['cpass']; 
+        $hash = password_hash( $cpass, PASSWORD_DEFAULT );
+        
+        $query = "SELECT * FROM `user` WHERE `Email` = '$email'";
+        $result = mysqli_query( $conn, $query );
+        $num = mysqli_num_rows( $result );
+
+        if ( $num == 1 ) {
+            $row = mysqli_fetch_assoc( $result );
+            $query = "UPDATE `user` SET `Password` = '$hash' WHERE `Email` = '$email'";
+            $result = mysqli_query( $conn, $query );
+            echo ($result == '1') ? 'true' : 'false';
+        } 
+        else {
+            echo 'emailNotExistErr';
+        }
+    }
+    else if(isset($_POST['login'])) {
         $email = $_POST['email'];
         $password = $_POST['password'];
         

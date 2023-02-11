@@ -146,13 +146,13 @@ else if (isset($_GET["q"])) {
     $q = $_GET["q"];
  
     // Query the database to find all the media names that match the search query
-    $result = mysqli_query($conn, "SELECT recent_name FROM recent WHERE user_id = '$uid' AND recent_name LIKE '%$q%' ");
+    $result = mysqli_query($conn, "SELECT * FROM recent WHERE user_id = '$uid' AND recent_name LIKE '%$q%' ORDER BY `recent_id` DESC ");
 
     // Fetch the results as an array
-    $media_names = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    $search_result['recent'] = mysqli_fetch_all($result);
 
     // Return the results as a JSON encoded string
-    echo json_encode($media_names);
+    echo json_encode($search_result);
 }
 
 

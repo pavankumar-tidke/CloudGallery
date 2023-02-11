@@ -130,7 +130,7 @@ function preview(i, display_category, media_id) {
  
             if (media_name.split(".").pop() == "mp4" || media_name.split(".").pop() == "webm") {
                 media_view = `
-                    <iframe height="500" width="500"
+                    <iframe height="980" width="1820"
                         src="${media_src}">
                     </iframe>
                 `;
@@ -145,7 +145,7 @@ function preview(i, display_category, media_id) {
             }
             else {
                 media_view = `
-                    <img src="${media_src}" class="card-img-top" height="1000"
+                    <img src="${media_src}" class="card-img-top" height="980" width="1820"
                     alt="image" />
                 `
             }
@@ -171,26 +171,264 @@ function searchmedia() {
         var xhr = new XMLHttpRequest();
         xhr.open("GET", "http://localhost/controller/php/live_operation?q=" + q, true);
         xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                // Update the results 
-                var results = JSON.parse(xhr.responseText);
-                console.log(results);
-                $('.home-content').hide();
-                $('.search-content').show();
-                if(results.length > 0) {
-                    $("#search-data-content-recent").text("No results Found.")
-                } 
-                else {
-                    document.getElementById("search-data-content-recent").innerHTML = results.map(function(result) {
-                        
-                        return result.recent_name;
-                    });
+            if (this.readyState == 4 && this.status == 200) {
+                let responce_obj = JSON.parse(this.responseText);
+                console.log(responce_obj);
+                $("#search-data-content-recent").empty();
+                if (responce_obj.recent.length > 0) {
+                    $(".home-content").hide();
+                    
+                  var Favourite, favFunc, mediaCardFooterMobile = "";
+                  for (let x = 0; x < responce_obj.recent.length; x++) {
+                    // checking favourite
+                    if (responce_obj["recent"][x][3] == 1) {
+                      Favourite = `<i class="material-icons my-auto">favorite</i>`;
+                      favFunc = `remove_from_Favourite(${x}, 'recent', ${responce_obj["recent"][x][0]}, '${responce_obj["recent"][x][2]}')`;
+                    } else {
+                      Favourite = `<i class="material-icons my-auto">favorite_border</i>`;
+                      favFunc = `add_to_Favourite(${x}, 'recent', ${responce_obj["recent"][x][0]}, '${responce_obj["recent"][x][2]}')`;
+                    }
+          
+                    // media source
+                    let media_src = `http://localhost/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`;
+                    let mainCard = ``;
+                    let mediaCardFooter = `
+                        <div class="dropdown my-auto media-action">
+                          <a class="d-flex align-items-center text link-dark text-decoration-none my-auto"
+                              id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="bi bi-three-dots-vertical my-auto"></i>
+                          </a>
+                          <ul class="dropdown-menu border border-secondary text-small shadow bg-dark dropdown-right" aria-labelledby="dropdownUser2">
+                            
+                            <li><button class="dropdown-item" onclick="rename_item(${x}, 'recent', ${responce_obj["recent"][x][0]}, '${responce_obj["recent"][x][2]}')" data-bs-toggle="modal" data-bs-target="#renameItem"><i class="material-icons me-2 my-auto">drive_file_rename_outline</i>Rename</button></li>
+                            <li>
+                                <hr class="dropdown-divider text my-1 mx-2">
+                            </li>
+                            <li><a class="dropdown-item" href="${media_src}" download="${responce_obj["recent"][x][2]}"><i class="material-icons me-2 my-auto">file_download</i>Download</a></li>
+                            <li><a class="dropdown-item" onclick="remove_item(${x}, 'recent', ${responce_obj["recent"][x][0]}, '${responce_obj["recent"][x][2]}')"><i class="material-icons me-2 my-auto">delete</i>Remove</a></li>
+                            <li>
+                                <hr class="dropdown-divider text my-1 mx-2">
+                            </li>
+                          </ul>
+                        </div>                          
+                      </div>
+                    `;
+                    if(window.screen.width < 500) {
+                      mediaCardFooterMobile = `
+                        <div class="d-flex justify-content-end">
+                          <div class="fav my-auto">
+                              <button class="btn my-auto" onclick="${favFunc}" id="favBtn${x}">${Favourite}</button>
+                          </div>
+                          <div class="dropdown my-auto media-action">
+                            <a class="d-flex align-items-center text link-dark text-decoration-none my-auto"
+                                id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-three-dots-vertical my-auto"></i>
+                            </a>
+                            <ul class="dropdown-menu border border-secondary text-small shadow bg-dark dropdown-right"
+                              aria-labelledby="dropdownUser2">
+                               
+                              <li>
+                                  <hr class="dropdown-divider text my-1 mx-2">
+                              </li>
+                              <li><button class="dropdown-item" onclick="rename_item(${x}, 'recent', ${responce_obj["recent"][x][0]}, '${responce_obj["recent"][x][2]}')" data-bs-toggle="modal" data-bs-target="#renameItem"><i class="material-icons me-2 my-auto">drive_file_rename_outline</i>Rename</button></li> 
+                              <li>
+                                  <hr class="dropdown-divider text my-1 mx-2">
+                              </li>
+                              <li><a class="dropdown-item" href="${media_src}" download="${responce_obj["recent"][x][2]}"><i
+                                          class="material-icons me-2 my-auto">file_download</i>Download</a>
+                              </li>
+                              <li><a class="dropdown-item" onclick="remove_item(${x}, 'recent', ${responce_obj["recent"][x][0]}, '${responce_obj["recent"][x][2]}')"><i
+                                          class="material-icons me-2 my-auto">delete</i>Remove</a>
+                              </li>
+                              <li>
+                                  <hr class="dropdown-divider text my-1 mx-2">
+                              </li>
+                               
+                            </ul>
+                          </div>
+                        </div>
+                      `;
+                    }
+          
+                    //**** Videos ****//
+                    if (responce_obj["recent"][x][2].split(".").pop() == "mp4" || responce_obj["recent"][x][2].split(".").pop() == "webm") {
+                      // big cards view
+                      // if (window.screen.width > 500) {
+                        $("#search-data-content-recent").append(`
+                            <div class="col p-2">
+                              <div class="card main-card m-1">
+                                <div class="img-div" >
+                                <div class="fav d-flex justify-content-end"><button class="btn m-1 p-0" onclick="${favFunc}" id="favBtn${x}">${Favourite}</button></div>
+                                  <div class="  d-flex justify-content-center  " style="height: 50px !important;" onclick="preview(${x}, 'recent', ${responce_obj["recent"][x][0]})"> 
+                                    <img src="http://localhost/asset/other/play-button.svg" style="height: 60px !important; margin-top: 30px;" class="" />
+                                  </div> 
+                                </div>
+                                <hr class="text my-0">
+                                <div class="d-flex justify-content-between me-3">
+                                  <div class="card-body d-flex">
+                                    <i class="bi bi-film me-2 bold text-success"></i>
+                                    <p class="card-text text-nowrap my-auto" id="item_name${x}" title="${responce_obj["recent"][x][2]}">${responce_obj["recent"][x][2]}</p>
+                                  </div>
+                                  ${mediaCardFooter}
+                              </div>
+                            </div>
+                        `);
+                      // }
+          
+                      // list type view
+                      if (window.screen.width < 500) {
+                        $("#home-data-content-list-recent").append(`
+                              <div class="col">
+                                <div class="card main-card-list my-1">
+                                  <div class="d-flex justify-content-between px-2">
+                                    <a href="#" class="d-flex justify-content-between me-3 my-auto" onclick="preview(${x}, 'recent', ${responce_obj["recent"][x][0]})">
+                                      <div class="img-div imag my-auto">
+                                        <i class="bi bi-film me-2 bold text-success"></i>
+                                      </div>
+                                      <div class="card-body ms-2">
+                                        <p class="card-text text text-nowrap my-auto pb-1" id="item_name${x}"title="${responce_obj["recent"][x][2]}">${responce_obj["recent"][x][2]}</p>
+                                        <p class="card-text-info text-muted text-nowrap my-auto">Date :- ${responce_obj["recent"][x][4]}</p>
+                                      </div>
+                                    </a>
+                                    ${mediaCardFooterMobile}
+                                  </div>
+                                </div>
+                                <hr class="text-muted my-0 py-0">
+                              </div>
+                        `);
+                      } 
+                    }
+                    //**** Audio ****//
+                    else if (responce_obj["recent"][x][2].split(".").pop() == "mp3") {
+                      // big cards view
+                      // if (window.screen.width > 500) {
+                        $("#search-data-content-recent").append(`
+                            <div class="col p-2">
+                              <div class="card main-card m-1">
+                                <div class="img-div">
+                                  <div class="fav d-flex justify-content-end"><button class="btn m-1 p-0" onclick="${favFunc}" id="favBtn${x}">${Favourite}</button></div>
+                                  <div class="  d-flex justify-content-center  " style="height: 50px !important;" onclick="preview(${x}, 'recent', ${responce_obj["recent"][x][0]})"> 
+                                    <img src="http://localhost/asset/other/dvd-disk.svg" style="height: 60px !important; margin-top: 30px;" class="" />
+                                  </div>
+                                  <div class="d-flex justify-content-center my-auto audio" id="audio${x}"></div>
+                                </div>
+                                <hr class="text my-0">
+                                <div class="d-flex justify-content-between me-3">
+                                  <div class="card-body d-flex">
+                                    <i class="material-icons me-2 text-danger">headphones</i>
+                                    <p class="card-text text-nowrap my-auto" id="item_name${x}" title="${responce_obj["recent"][x][2]}">${responce_obj["recent"][x][2]}</p>
+                                  </div>
+                                  ${mediaCardFooter}
+                              </div>
+                            </div>
+                        `);
+                      // }
+                      // audio player big cards
+                      // $(`#audio${x}`).buttonAudioPlayer({
+                      //   src: `http://localhost/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`,
+                      //   type: "bar-animation",
+                      // });
+          
+                      // list type view
+                      if (window.screen.width < 500) {
+                        $("#home-data-content-list-recent").append(`
+                          <div class="col">
+                            <div class="card main-card-list my-1">
+                              <div class="d-flex justify-content-between px-2">
+                                <a href="#" class="d-flex justify-content-between me-3 my-auto" onclick="preview(${x}, 'recent', ${responce_obj["recent"][x][0]})">
+                                    <div class="img-div imag my-auto">
+                                      <i class="bi bi-file-earmark-music me-2 bold text-danger"></i>
+                                    </div>
+                                    <div class="card-body ms-2">
+                                        <p class="card-text text text-nowrap my-auto pb-1" id="item_name${x}"title="${responce_obj["recent"][x][2]}">${responce_obj["recent"][x][2]}</p>
+                                        <p class="card-text-info text-muted text-nowrap my-auto">Date :- ${responce_obj["recent"][x][4]}</p>
+                                    </div>
+                                </a>
+                                ${mediaCardFooterMobile}
+                              </div>
+                            </div>
+                            <hr class="text-muted my-0 py-0">
+                          </div>
+                        `);
+                      }
+          
+                      // audio player list view
+                      $(`#audioList${x}`).buttonAudioPlayer({
+                        src: `http://localhost/storage/users/${uid}/recent/${responce_obj["recent"][x][2]}`,
+                        type: "bar-animation",
+                      });
+                    }
+                    //**** Images ****//
+                    else {
+                      // Big cards view
+                      // if (window.screen.width > 500) {
+                        $("#search-data-content-recent").append(`
+                          <div class="col p-2">
+                            <div class="card main-card m-1">
+                              <div class="img-div imag">
+                                  <div class="fav d-flex justify-content-end"><button class="btn m-1 p-0" onclick="${favFunc}" id="favBtn${x}">${Favourite}</button></div>
+                                  <div class="  d-flex justify-content-center  " style="height: 50px !important;" onclick="preview(${x}, 'recent', ${responce_obj["recent"][x][0]})"> 
+                                      <img src="${media_src}" class="card-img-top"
+                                          alt="image" />
+                                  </div>
+                              </div>
+                              <hr class="text my-0">
+                              <div class="d-flex justify-content-between me-3">
+                                <div class="card-body d-flex">
+                                  <i class="material-icons me-2 text-info">image</i>
+                                  <p class="card-text text-nowrap my-auto" id="item_name${x}" title="${responce_obj["recent"][x][2]}">${responce_obj["recent"][x][2]}</p>
+                                </div>
+                                ${mediaCardFooter}
+                            </div>
+                          </div>
+                        `);
+                      // }
+          
+                      // list type view
+                      if (window.screen.width < 500) {
+                        $("#home-data-content-list-recent").append(`
+                            <div class="col">
+                              <div class="card main-card-list my-1">
+                                <div class="d-flex justify-content-between px-2">
+                                  <a href="#" class="d-flex justify-content-between me-3 my-auto" onclick="preview(${x}, 'recent', ${responce_obj["recent"][x][0]})">
+                                      <div class="img-div imag my-auto">
+                                          <img src="${media_src}"
+                                              class="card-img-top" alt="image" />
+                                      </div>
+                                      <div class="card-body ms-2">
+                                          <p class="card-text text text-nowrap my-auto pb-1" id="item_name${x}"title="${responce_obj["recent"][x][2]}">${responce_obj["recent"][x][2]}</p>
+                                          <p class="card-text-info text-muted text-nowrap my-auto">Date :- ${responce_obj["recent"][x][4]}</p>
+                                      </div>
+                                  </a>
+                                  ${mediaCardFooterMobile}
+                                </div>
+                              </div>
+                              <hr class="text-muted my-0 py-0">
+                            </div>
+                        `);
+                      }
+                    }
+                  }
+                } else {
+                  $("#search-data-content-recent").append(
+                    `<h2 class="text-muted text-center my-5">No Found</h2>`
+                  );
                 }
+                $(document).ready(function () {
+                  setTimeout(() => {
+                    $(".loading").fadeOut(100);
+                  }, 200);
+                });
+                $(".divload").hide();
+                $(".search-content").show();
             }
         };
         xhr.send();
     } else {
-        $("#search-data-content-recent").text("No results Found.")
+        $("#search-data-content-recent").empty();
+        $("#search-data-content-recent").append(
+            `<h2 class="text-muted text-center my-5">No Found</h2>`
+          );
     }
 }
 
